@@ -9,7 +9,7 @@ import WatchListPage from './pages/watchListPage/WatchListPage';
 function App() {
 
   return (
-    <div>Powernappers
+    <div>
       <Header />
       <Routes>
         <Route path="/" element={ <HomePage /> } />
