@@ -1,4 +1,4 @@
-import './singelMoviePage.css'
+import './singleMoviePage.css'
 
 function SingleMoviePage() {
   return (
