@@ -1,0 +1,37 @@
+.home-page {
+    background-color: var(--blue-color-light);
+    padding: 2rem 0;
+}
+
+.home-page__content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.home-page__container {
+    width: 100%;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+    border-bottom: solid 1px white;
+}
+
+.home-page__container:last-of-type {
+    border-bottom: none;
+}
+
+.home-page__title {
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    font-family: var(--font-standard);
+    font-weight: 500;
+}
+
+
+h6 {
+    margin: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+}

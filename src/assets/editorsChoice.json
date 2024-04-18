@@ -1,0 +1,92 @@
+[
+    {
+        "title": "The Social Network",
+        "imdbid": "tt1285016",
+        "poster": "https://www.example.com/posters/the_social_network.jpg",
+        "trailer_link": "https://www.youtube.com/embed/mWoZGqLlEaM"
+    },
+    {
+        "title": "Interstellar",
+        "imdbid": "tt0816692",
+        "poster": "https://www.example.com/posters/interstellar.jpg",
+        "trailer_link": "https://www.youtube.com/embed/zSWdZVtXT7E"
+    },
+    {
+        "title": "The Grand Budapest Hotel",
+        "imdbid": "tt2278388",
+        "poster": "https://www.example.com/posters/the_grand_budapest_hotel.jpg",
+        "trailer_link": "https://www.youtube.com/embed/1Fg5iWmQjwk"
+    },
+    {
+        "title": "La La Land",
+        "imdbid": "tt3783958",
+        "poster": "https://www.example.com/posters/la_la_land.jpg",
+        "trailer_link": "https://www.youtube.com/embed/0pdqf4P9MB8"
+    },
+    {
+        "title": "The Godfather",
+        "imdbid": "tt0068646",
+        "poster": "https://www.example.com/posters/godfather.jpg",
+        "trailer_link": "https://www.youtube.com/embed/sY1S34973zA"
+    },
+    {
+        "title": "Forrest Gump",
+        "imdbid": "tt0109830",
+        "poster": "https://www.example.com/posters/forrest_gump.jpg",
+        "trailer_link": "https://www.youtube.com/embed/uPIEn0M8su0"
+    },
+    {
+        "title": "The Dark Knight",
+        "imdbid": "tt0468569",
+        "poster": "https://www.example.com/posters/dark_knight.jpg",
+        "trailer_link": "https://www.youtube.com/embed/EXeTwQWrcwY"
+    },
+    {
+        "title": "Inception",
+        "imdbid": "tt1375666",
+        "poster": "https://www.example.com/posters/inception.jpg",
+        "trailer_link": "https://www.youtube.com/embed/d3A3-zSOBT4"
+    },
+    {
+        "title": "Whiplash",
+        "imdbid": "tt2582802",
+        "poster": "https://www.example.com/posters/whiplash.jpg",
+        "trailer_link": "https://www.youtube.com/embed/7d_jQycdQGo"
+    },
+    {
+        "title": "The Shawshank Redemption",
+        "imdbid": "tt0111161",
+        "poster": "https://www.example.com/posters/shawshank_redemption.jpg",
+        "trailer_link": "https://www.youtube.com/embed/6hB3S9bIaco"
+    },
+    {
+        "title": "Fight Club",
+        "imdbid": "tt0137523",
+        "poster": "https://www.example.com/posters/fight_club.jpg",
+        "trailer_link": "https://www.youtube.com/embed/SUXWAEX2jlg"
+    },
+    {
+        "title": "The Matrix",
+        "imdbid": "tt0133093",
+        "poster": "https://www.example.com/posters/matrix.jpg",
+        "trailer_link": "https://www.youtube.com/embed/vKQi3bBA1y8"
+    },
+    {
+        "title": "The Godfather: Part II",
+        "imdbid": "tt0071562",
+        "poster": "https://www.example.com/posters/godfather_part_2.jpg",
+        "trailer_link": "https://www.youtube.com/embed/9O1Iy9od7-A"
+    },
+    {
+        "title": "Se7en",
+        "imdbid": "tt0114369",
+        "poster": "https://www.example.com/posters/seven.jpg",
+        "trailer_link": "https://www.youtube.com/embed/J4YV2_TcCoE"
+    },
+    {
+        "title": "The Silence of the Lambs",
+        "imdbid": "tt0102926",
+        "poster": "https://www.example.com/posters/silence_of_the_lambs.jpg",
+        "trailer_link": "https://www.youtube.com/embed/W6Mm8Sbe__o"
+    }
+]

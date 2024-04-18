@@ -10,7 +10,16 @@ import { useState } from "react"
 
 function App() {
 
+    const [favoritMovies, setFavoritMovies] = useState([])
+    const [watchlist, setWatchlist] = useState([])
     const [recentlyViewed, setRecentlyViewed] = useState([])
+
+    const handleFavorites = () => {
+        console.log('handleFavorites');
+    }
+    const handleWatchlist = () => {
+        console.log('handleWatchlist');
+    }
 
     const handleRecentlyViewed = (movie) => {
         console.log(typeof (movie));
@@ -34,7 +43,13 @@ function App() {
         <div>
             <Header />
             <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<HomePage
+                    favoritMovies={favoritMovies}
+                    watchlist={watchlist}
+                    handleFavorites={handleFavorites}
+                    handleWatchlist={handleWatchlist}
+                />}
+                />
                 <Route path="/search/:id" element={<SearchPage />} />
                 <Route path="/watchlist/" element={<WatchListPage />} />
                 <Route path="/favorites/" element={<FavoritesPage />} />
