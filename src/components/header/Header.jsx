@@ -5,7 +5,7 @@ import searchIcon from '../../assets/searchIcon.svg'
 import axios from 'axios';
 
 
-const apiKey = `2799d50`
+const apiKey = ``
 
 function Header() {
 
