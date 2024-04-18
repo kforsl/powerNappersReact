@@ -10,6 +10,21 @@ import { useState } from "react"
 
 function App() {
 
+
+  return (
+    <div>
+      <Header />
+      <Routes>
+        <Route path="/" element={ <HomePage /> } />
+        <Route path="/search/:id" element={ <SearchPage /> } />
+        <Route path="/watchlist/" element={ <WatchListPage />} />
+        <Route path="/favorites/" element={ <FavoritesPage />} />
+        <Route path="/singlemovie/:id" element={ <SingleMoviePage /> } />
+      </Routes>
+      <Footer />
+    </div>
+  )
+
     const [recentlyViewed, setRecentlyViewed] = useState([])
 
     const handleRecentlyViewed = (movie) => {
