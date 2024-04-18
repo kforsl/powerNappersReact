@@ -17,12 +17,12 @@ function Header() {
     axios.get(`http://www.omdbapi.com/?apikey=${apiKey}&s=${event.target.value}`)
       .then(res => {
         if (res.data.Search) {
-          console.log(res.data.Search);
           setSearchResult(res.data.Search);
         } else {
           setSearchResult([])
         }
       })
+      .catch(error => console.log(error))
   }
 
   const handleClose = () => {
@@ -31,8 +31,7 @@ function Header() {
     input.value = ``
   }
 
-  const activeBtn = (e) => {
-    console.log(e.target.tagName);
+  const activeBtn = () => {
     document.querySelectorAll(`.header__list-item`)
       .forEach(item => {
         item.classList.remove(`active`)
