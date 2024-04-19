@@ -6,7 +6,6 @@
     position: relative;
     display: flex;
     justify-content: center;
-    overflow: hidden;
 }
 
 .slider {
@@ -65,14 +64,14 @@
     transform: translateX(-50%);
 }
 
-.progress-bar__nob {
+.progress-bar__indicator {
     background-color: var(--blue-color-darkest);
     opacity: .3;
     padding: .3rem 1rem;
     border-radius: .5rem;
 }
 
-.progress-bar__nob--active {
+.progress-bar__indicator--active {
     background-color: var(--blue-color-darkest);
     opacity: 1;
 }

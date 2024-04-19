@@ -77,8 +77,8 @@ function MovieCardSlider({ movies, favoriteMovies, watchlist, handleFavorites, h
                 {
                     progressBar.map((nob, index) => {
                         return nob ?
-                            <p key={index} className='progress-bar__nob progress-bar__nob--active'></p> :
-                            <p key={index} className='progress-bar__nob'></p>
+                            <p key={index} className='progress-bar__indicator progress-bar__indicator--active'></p> :
+                            <p key={index} className='progress-bar__indicator'></p>
                     })
                 }
             </section>
