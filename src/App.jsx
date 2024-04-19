@@ -7,7 +7,7 @@ import SearchPage from "./pages/searchPage/SearchPage.jsx"
 import FavoritesPage from './pages/favoritesPage/FavoritesPage';
 import WatchListPage from './pages/watchListPage/WatchListPage';
 import SingleMoviePage from './pages/singleMoviePage/SingleMoviePage';
-import { useState } from "react"
+
 
 function App() {
   const [recentlyViewed, setRecentlyViewed] = useState([])
