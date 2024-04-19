@@ -10,9 +10,11 @@ import SingleMoviePage from './pages/singleMoviePage/SingleMoviePage';
 
 
 function App() {
+
+    const [recentlyViewed, setRecentlyViewed] = useState([])
+
     const [favoritMovies, setFavoritMovies] = useState([])
     const [watchlist, setWatchlist] = useState([])
-    const [recentlyViewed, setRecentlyViewed] = useState([])
 
     const handleFavorites = () => {
         console.log('handleFavorites');
@@ -40,12 +42,14 @@ function App() {
         <div>
             <Header />
             <Routes>
-                <Route path="/" element={<HomePage
-                    favoritMovies={favoritMovies}
-                    watchlist={watchlist}
-                    handleFavorites={handleFavorites}
-                    handleWatchlist={handleWatchlist}
-                />}
+                <Route path="/" element={
+                    <HomePage
+                        favoritMovies={favoritMovies}
+                        watchlist={watchlist}
+                        handleFavorites={handleFavorites}
+                        handleWatchlist={handleWatchlist}
+                    />
+                }
                 />
                 <Route path="/search/:id" element={<SearchPage />} />
                 <Route path="/watchlist/" element={<WatchListPage />} />

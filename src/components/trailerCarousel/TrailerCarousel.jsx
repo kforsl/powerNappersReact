@@ -4,18 +4,18 @@ import './trailerCarousel.css'
 const moveLeft = (movieOrder, setMovieOrder) => {
     const order = [...movieOrder]
     const newMovieOrder = []
-    const move = order.shift()
-    newMovieOrder.push(...order)
+    const move = order.pop()
     newMovieOrder.push(move)
+    newMovieOrder.push(...order)
     setMovieOrder(newMovieOrder)
 }
 
 const moveRight = (movieOrder, setMovieOrder) => {
     const order = [...movieOrder]
     const newMovieOrder = []
-    const move = order.pop()
+    const move = order.shift()
     newMovieOrder.push(...order)
-    newMovieOrder.unshift(move)
+    newMovieOrder.push(move)
     setMovieOrder(newMovieOrder)
 }
 
@@ -33,7 +33,7 @@ function TrailerCarousel({ movies }) {
                 <button
                     className='trailer-carousel__navigation-btn'
                     onClick={() => moveLeft(movieOrder, setMovieOrder)}>
-                    <img src="../src/assets/arrow-left.svg" alt="" />
+                    <img src="../src/assets/arrow-left.svg" alt="trailer carousel navigate arrow left " />
                 </button>
             </div>
             {
@@ -48,7 +48,7 @@ function TrailerCarousel({ movies }) {
                 <button
                     className='trailer-carousel__navigation-btn'
                     onClick={() => moveRight(movieOrder, setMovieOrder)}>
-                    <img src="../src/assets/arrow-right.svg" alt="" />
+                    <img src="../src/assets/arrow-right.svg" alt="trailer carousel navigate arrow right" />
                 </button>
             </div>
         </section>

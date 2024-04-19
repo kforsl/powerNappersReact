@@ -5,6 +5,7 @@ import axios from 'axios';
 import TrailerCarousel from '../../components/trailerCarousel/TrailerCarousel';
 import MovieCardSlider from '../../components/movieCardSlider/MovieCardSlider';
 import MovieListGrid from './../../components/movieListGrid/MovieListGrid';
+import editorsChoiceJson from '../../assets/editorsChoice.json'
 
 const getTopMovies = (setTopMovies) => {
     axios.get('https://santosnr6.github.io/Data/movies2.json')
@@ -35,6 +36,7 @@ function Homepage({ favoritMovies, watchlist, handleFavorites, handleWatchlist }
 
     useEffect(() => {
         getTopMovies(setTopMovies)
+        setEditorsChoices([...editorsChoiceJson])
     }, [])
 
     useEffect(() => {
@@ -68,7 +70,6 @@ function Homepage({ favoritMovies, watchlist, handleFavorites, handleWatchlist }
                         handleFavorites={handleFavorites}
                         handleWatchlist={handleWatchlist}
                     />
-
                 </article>
 
                 <article className='home-page__container'>
