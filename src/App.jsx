@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { Route, Routes } from "react-router-dom"
 import Header from "./components/header/Header"
 import Footer from "./components/footer/Footer"
@@ -6,10 +7,9 @@ import SearchPage from "./pages/searchPage/SearchPage.jsx"
 import FavoritesPage from './pages/favoritesPage/FavoritesPage';
 import WatchListPage from './pages/watchListPage/WatchListPage';
 import SingleMoviePage from './pages/singleMoviePage/SingleMoviePage';
-import { useState } from "react"
+
 
 function App() {
-
     const [favoritMovies, setFavoritMovies] = useState([])
     const [watchlist, setWatchlist] = useState([])
     const [recentlyViewed, setRecentlyViewed] = useState([])
@@ -22,12 +22,9 @@ function App() {
     }
 
     const handleRecentlyViewed = (movie) => {
-        console.log(typeof (movie));
         if (movie === 'clear') {
-            console.log('true');
             setRecentlyViewed([])
         } else {
-            console.log('false');
             const newClickedMovie = { ...movie }
             const newRecentlyViewed = []
             const filterdRecently = recentlyViewed.filter(m => m.imdbID !== newClickedMovie.imdbID)
