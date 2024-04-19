@@ -1,92 +1,92 @@
 [
     {
-        "Title": "Moonlight",
-        "imdbID": "tt4975722",
-        "Poster": "https://upload.wikimedia.org/wikipedia/en/8/84/Moonlight_%282016_film%29.png",
+        "title": "Moonlight",
+        "imdbid": "tt4975722",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/8/84/Moonlight_%282016_film%29.png",
         "trailer_link": "https://www.youtube.com/embed/9NJj12tJzqc"
     },
     {
-        "Title": "The Lobster",
-        "imdbID": "tt3464902",
-        "Poster": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9d/The_Lobster_%282015%29_poster.jpg/220px-The_Lobster_%282015%29_poster.jpg",
+        "title": "The Lobster",
+        "imdbid": "tt3464902",
+        "poster": "https://i.stack.imgur.com/PoeYO.jpg",
         "trailer_link": "https://www.youtube.com/embed/vU29VfayDMw"
     },
     {
-        "Title": "Eternal Sunshine of the Spotless Mind",
-        "imdbID": "tt0338013",
-        "Poster": "https://upload.wikimedia.org/wikipedia/en/a/a4/Eternal_Sunshine_of_the_Spotless_Mind.png",
+        "title": "Eternal Sunshine of the Spotless Mind",
+        "imdbid": "tt0338013",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/a/a4/Eternal_Sunshine_of_the_Spotless_Mind.png",
         "trailer_link": "https://www.youtube.com/embed/lnSgSe2GzDc"
     },
     {
-        "Title": "Amélie",
-        "imdbID": "tt0211915",
-        "Poster": "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Amelie_poster.jpg/220px-Amelie_poster.jpg",
+        "title": "Amélie",
+        "imdbid": "tt0211915",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/thumb/5/53/Amelie_poster.jpg/220px-Amelie_poster.jpg",
         "trailer_link": "https://www.youtube.com/embed/sECzJY07oK4"
     },
     {
-        "Title": "The Grand Budapest Hotel",
-        "imdbID": "tt2278388",
-        "Poster": "https://upload.wikimedia.org/wikipedia/en/1/1c/The_Grand_Budapest_Hotel.png",
+        "title": "The Grand Budapest Hotel",
+        "imdbid": "tt2278388",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/1/1c/The_Grand_Budapest_Hotel.png",
         "trailer_link": "https://www.youtube.com/embed/1Fg5iWmQjwk"
     },
     {
-        "Title": "Whiplash",
-        "imdbID": "tt2582802",
-        "Poster": "https://upload.wikimedia.org/wikipedia/en/0/01/Whiplash_poster.jpg",
+        "title": "Whiplash",
+        "imdbid": "tt2582802",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/0/01/Whiplash_poster.jpg",
         "trailer_link": "https://www.youtube.com/embed/7d_jQycdQGo"
     },
     {
-        "Title": "Her",
-        "imdbID": "tt1798709",
-        "Poster": "https://upload.wikimedia.org/wikipedia/en/4/44/Her2013Poster.jpg",
+        "title": "Her",
+        "imdbid": "tt1798709",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/4/44/Her2013Poster.jpg",
         "trailer_link": "https://www.youtube.com/embed/WzV6mXIOVl4"
     },
     {
-        "Title": "Drive",
-        "imdbID": "tt0780504",
-        "Poster": "https://upload.wikimedia.org/wikipedia/en/1/13/Drive2011Poster.jpg",
+        "title": "Drive",
+        "imdbid": "tt0780504",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/1/13/Drive2011Poster.jpg",
         "trailer_link": "https://www.youtube.com/embed/CWX34ShfcsE"
     },
     {
-        "Title": "The Florida Project",
-        "imdbID": "tt5649144",
-        "Poster": "https://upload.wikimedia.org/wikipedia/en/b/b2/The_Florida_Project.jpg",
+        "title": "The Florida Project",
+        "imdbid": "tt5649144",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/b/b2/The_Florida_Project.jpg",
         "trailer_link": "https://www.youtube.com/embed/WwQ-NH1rRT4"
     },
     {
-        "Title": "The Witch",
-        "imdbID": "tt4263482",
-        "Poster": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/The_Witch_poster.png/220px-The_Witch_poster.png",
+        "title": "The Witch",
+        "imdbid": "tt4263482",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/The_Witch_poster.png/220px-The_Witch_poster.png",
         "trailer_link": "https://www.youtube.com/embed/iQXmlf3Sefg"
     },
     {
-        "Title": "The Farewell",
-        "imdbID": "tt8637428",
-        "Poster": "https://upload.wikimedia.org/wikipedia/en/f/f5/The_Farewell_poster.jpg",
+        "title": "The Farewell",
+        "imdbid": "tt8637428",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/f/f5/The_Farewell_poster.jpg",
         "trailer_link": "https://www.youtube.com/embed/RofpAjqwMa8"
     },
     {
-        "Title": "Ex Machina",
-        "imdbID": "tt0470752",
-        "Poster": "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Ex-machina-uk-poster.jpg/220px-Ex-machina-uk-poster.jpg",
+        "title": "Ex Machina",
+        "imdbid": "tt0470752",
+        "poster": "https://m.media-amazon.com/images/I/61PucT1ph7L._AC_UF1000,1000_QL80_.jpg",
         "trailer_link": "https://www.youtube.com/embed/bggUmgeMCdc"
     },
     {
-        "Title": "A Ghost Story",
-        "imdbID": "tt6265828",
-        "Poster": "https://upload.wikimedia.org/wikipedia/en/d/dd/A_Ghost_Story_poster.jpeg",
+        "title": "A Ghost Story",
+        "imdbid": "tt6265828",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/d/dd/A_Ghost_Story_poster.jpeg",
         "trailer_link": "https://www.youtube.com/embed/c_3NMtxeyfk"
     },
     {
-        "Title": "Call Me by Your Name",
-        "imdbID": "tt5726616",
-        "Poster": "https://upload.wikimedia.org/wikipedia/en/c/c9/CallMeByYourName2017.png",
+        "title": "Call Me by Your Name",
+        "imdbid": "tt5726616",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/c/c9/CallMeByYourName2017.png",
         "trailer_link": "https://www.youtube.com/embed/Z9AYPxH5NTM"
     },
     {
-        "Title": "The Handmaiden",
-        "imdbID": "tt4016934",
-        "Poster": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/The_Handmaiden_film.png/220px-The_Handmaiden_film.png",
+        "title": "The Handmaiden",
+        "imdbid": "tt4016934",
+        "poster": "https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/The_Handmaiden_film.png/220px-The_Handmaiden_film.png",
         "trailer_link": "https://www.youtube.com/embed/vHOmrolJEiY"
     }
 ]

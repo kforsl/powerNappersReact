@@ -28,7 +28,7 @@ const getfeaturedMovies = (setFeaturedTrailers, topMovies) => {
     setFeaturedTrailers(newFeaturedTrailers);
 }
 
-function Homepage({ favoritMovies, watchlist, handleFavorites, handleWatchlist }) {
+function Homepage({ favoriteMovies, watchlist, handleFavorites, handleWatchlist }) {
 
     const [topMovies, setTopMovies] = useState([])
     const [featuredTrailers, setFeaturedTrailers] = useState([])
@@ -65,7 +65,7 @@ function Homepage({ favoritMovies, watchlist, handleFavorites, handleWatchlist }
 
                     <MovieCardSlider
                         movies={editorsChoices}
-                        favoritMovies={favoritMovies}
+                        favoriteMovies={favoriteMovies}
                         watchlist={watchlist}
                         handleFavorites={handleFavorites}
                         handleWatchlist={handleWatchlist}
@@ -78,7 +78,7 @@ function Homepage({ favoritMovies, watchlist, handleFavorites, handleWatchlist }
                     </h2>
                     <MovieListGrid
                         movies={topMovies}
-                        favoritMovies={favoritMovies}
+                        favoriteMovies={favoriteMovies}
                         watchlist={watchlist}
                         handleFavorites={handleFavorites}
                         handleWatchlist={handleWatchlist}

@@ -6,15 +6,17 @@
     position: relative;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 
 .slider {
     display: flex;
     flex-grow: 1;
     transition: all .3s ease-in-out;
+
 }
 
-.slider>img {
+.slider>.movieCard {
     flex: 0 0 20%;
     max-width: 20%;
     aspect-ratio: 2/3;
@@ -34,21 +36,21 @@
     transition: all .2s ease-in-out;
 }
 
-.container .card-slider__navigation-btn img {
-    opacity: 0;
-}
-
-.container:hover .card-slider__navigation-btn img {
-    opacity: 1;
-}
-
 .container:hover .card-slider__navigation-btn,
 .container:focus .card-slider__navigation-btn {
     background-color: rgba(0, 0, 0, .2);
 }
 
-.container .card-slider__navigation-btn:hover,
-.container .card-slider__navigation-btn:focus {
+.container .card-slider__navigation-btn img {
+    opacity: 0;
+}
+
+.container:hover .card-slider__navigation-btn img,
+.container .card-slider__navigation-btn:focus img {
+    opacity: 1;
+}
+
+.container .card-slider__navigation-btn:hover {
     background-color: rgba(0, 0, 0, .5);
 }
 

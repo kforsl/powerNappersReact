@@ -33,7 +33,7 @@ function TrailerCarousel({ movies }) {
                 <button
                     className='trailer-carousel__navigation-btn'
                     onClick={() => moveLeft(movieOrder, setMovieOrder)}>
-                    <img src="../src/assets/arrow-left.svg" alt="trailer carousel navigate arrow left " />
+                    <img src="../src/assets/chevronLeft.svg" alt="trailer carousel navigate arrow left " />
                 </button>
             </div>
             {
@@ -48,7 +48,7 @@ function TrailerCarousel({ movies }) {
                 <button
                     className='trailer-carousel__navigation-btn'
                     onClick={() => moveRight(movieOrder, setMovieOrder)}>
-                    <img src="../src/assets/arrow-right.svg" alt="trailer carousel navigate arrow right" />
+                    <img src="../src/assets/chevronRight.svg" alt="trailer carousel navigate arrow right" />
                 </button>
             </div>
         </section>

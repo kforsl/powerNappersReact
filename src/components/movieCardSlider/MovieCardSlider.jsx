@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import './movieCardSlider.css'
 import { useEffect } from 'react';
+import MovieCard from '../movieCard/MovieCard';
 
-function MovieCardSlider({ movies }) {
+function MovieCardSlider({ movies, favoriteMovies, watchlist, handleFavorites, handleWatchlist }) {
     const nmbrOfRow = Math.ceil(movies.length / 5 - 1)
     const [sliderPosition, setSliderPosition] = useState(0)
     const [progressBar, setProgressBar] = useState([])
@@ -46,21 +47,30 @@ function MovieCardSlider({ movies }) {
                 onClick={changeLeft}
                 className='card-slider__navigation-btn card-slider__navigation-btn--left'
             >
-                <img src={'../src/assets/arrow-left.svg'} alt="slider navigate arrow left " />
+                <img src={'../src/assets/chevronLeft.svg'} alt="slider navigate chevron left " />
             </button>
 
             <div className='slider' style={{ transform: `translateX(calc(-100% * ${sliderPosition}))` }}>
-                {
-                    movies.map((movie, index) => <img key={index} src={movie.Poster} alt={`Poster for ${movie.Title}`} />
-                    )
+                {/* 
+                    movies.map((movie, index) => <img key={index} src={movie.Poster} alt={`Poster for ${movie.Title}`} /> )
+                 */
+                    movies.map((movie) => <MovieCard
+                        key={movie.imdbid}
+                        movie={movie}
+                        handleFavorites={handleFavorites}
+                        handleWatchlist={handleWatchlist}
+                        favoriteMovies={favoriteMovies}
+                        watchlist={watchlist} />)
+
                 }
+
             </div>
 
             <button
                 onClick={changeRight}
                 className='card-slider__navigation-btn card-slider__navigation-btn--right'
             >
-                <img src={'../src/assets/arrow-right.svg'} alt="slider navigate arrow right" />
+                <img src={'../src/assets/chevronRight.svg'} alt="slider navigate chevron right" />
             </button>
 
             <section className='progress-bar'>
