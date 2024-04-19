@@ -12,59 +12,58 @@ import SingleMoviePage from './pages/singleMoviePage/SingleMoviePage';
 
 
 function App() {
-  const [recentlyViewed, setRecentlyViewed] = useState([])
-
-  const handleRecentlyViewed = (movie) => {
-    if (movie === 'clear') {
-      setRecentlyViewed([])
-    } else {
-      const newClickedMovie = { ...movie }
-      const newRecentlyViewed = []
-      const filterdRecently = recentlyViewed.filter(m => m.imdbID !== newClickedMovie.imdbID)
-      for (let i = 0; i < 5; i++) {
-        filterdRecently[i] && newRecentlyViewed.push(filterdRecently[i])
-      }
-      newRecentlyViewed.unshift(newClickedMovie)
-      setRecentlyViewed(newRecentlyViewed)
+    const [recentlyViewed, setRecentlyViewed] = useState([])
+    const handleRecentlyViewed = (movie) => {
+        if (movie === 'clear') {
+            setRecentlyViewed([])
+        } else {
+            const newClickedMovie = { ...movie }
+            const newRecentlyViewed = []
+            const filterdRecently = recentlyViewed.filter(m => m.imdbID !== newClickedMovie.imdbID)
+            for (let i = 0; i < 5; i++) {
+                filterdRecently[i] && newRecentlyViewed.push(filterdRecently[i])
+            }
+            newRecentlyViewed.unshift(newClickedMovie)
+            setRecentlyViewed(newRecentlyViewed)
+        }
     }
-  }
 
-  const [favoriteMovies, setFavoriteMovies] = useState([]);
-  const [watchlist, setWatchlist] = useState([]);
+    const [favoriteMovies, setFavoriteMovies] = useState([]);
+    const [watchlist, setWatchlist] = useState([]);
 
-  const handleFavorites = () => {
-    console.log('handleFavorites');
-  }
-  const handleWatchlist = () => {
-    console.log('handleWatchlist');
-  }
+    const handleFavorites = () => {
+        console.log('handleFavorites');
+    }
+    const handleWatchlist = () => {
+        console.log('handleWatchlist');
+    }
 
-  return (
-    <div className="app">
-      <Header handleSearchInput={handleSearchInput} />
-      <Routes>
-        <Route path="/" element={
-          <HomePage
-            watchlist={watchlist}
-            favoriteMovies={favoriteMovies}
-            handleFavorites={handleFavorites}
-            handleWatchlist={handleWatchlist}
-          />} />
-        <Route path="/search/:id" element={<SearchPage />} />
-        <Route path="/watchlist/" element={<WatchListPage />} />
-        <Route path="/favorites/" element={<FavoritesPage />} />
-        <Route path="/singlemovie/:id" element={
-          <SingleMoviePage
-            watchlist={watchlist}
-            favoriteMovies={favoriteMovies}
-            handleFavorites={handleFavorites}
-            handleWatchlist={handleWatchlist}
-            handleRecentlyViewed={handleRecentlyViewed}
-          />} />
-      </Routes>
-      <Footer recentlyViewed={recentlyViewed} handleRecentlyViewed={handleRecentlyViewed} />
-    </div>
-  )
+    return (
+        <div className="app">
+            <Header handleSearchInput={handleSearchInput} />
+            <Routes>
+                <Route path="/" element={
+                    <HomePage
+                        watchlist={watchlist}
+                        favoriteMovies={favoriteMovies}
+                        handleFavorites={handleFavorites}
+                        handleWatchlist={handleWatchlist}
+                    />} />
+                <Route path="/search/:id" element={<SearchPage />} />
+                <Route path="/watchlist/" element={<WatchListPage />} />
+                <Route path="/favorites/" element={<FavoritesPage />} />
+                <Route path="/singlemovie/:id" element={
+                    <SingleMoviePage
+                        watchlist={watchlist}
+                        favoriteMovies={favoriteMovies}
+                        handleFavorites={handleFavorites}
+                        handleWatchlist={handleWatchlist}
+                        handleRecentlyViewed={handleRecentlyViewed}
+                    />} />
+            </Routes>
+            <Footer recentlyViewed={recentlyViewed} handleRecentlyViewed={handleRecentlyViewed} />
+        </div>
+    )
 }
 
 export default App
