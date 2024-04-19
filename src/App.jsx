@@ -7,7 +7,7 @@ import SearchPage from "./pages/searchPage/SearchPage.jsx"
 import FavoritesPage from './pages/favoritesPage/FavoritesPage';
 import WatchListPage from './pages/watchListPage/WatchListPage';
 import SingleMoviePage from './pages/singleMoviePage/SingleMoviePage';
-
+import { useState } from "react"
 
 function App() {
   const [recentlyViewed, setRecentlyViewed] = useState([])
@@ -26,15 +26,32 @@ function App() {
           setRecentlyViewed(newRecentlyViewed)
       }
   }
+  const [favoriteMovies, setFavoriteMovies] = useState([]);
+  const [watchlist, setWatchlist] = useState([])
+
+  const handleFavorites = () => {
+    console.log('handleFavorites');
+  }
+  const handleWatchlist = () => {
+    console.log('handleWatchlist');
+  }
 
   return (
     <div>
       <Header />
       <Routes>
-        <Route path="/" element={ <HomePage /> } />
-        <Route path="/search/:id" element={ <SearchPage /> } />
-        <Route path="/watchlist/" element={ <WatchListPage />} />
-        <Route path="/favorites/" element={ <FavoritesPage />} />
+        <Route path="/" element={
+          <HomePage
+            favoriteMovies={favoriteMovies}
+            watchlist={watchlist}
+            handleFavorites={handleFavorites}
+            handleWatchlist={handleWatchlist}
+          />
+        }
+        />
+        <Route path="/search/:id" element={<SearchPage />} />
+        <Route path="/watchlist/" element={<WatchListPage />} />
+        <Route path="/favorites/" element={<FavoritesPage />} />
         <Route path="/singlemovie/:id" element={ <SingleMoviePage /> } />
       </Routes>
       <Footer recentlyViewed={recentlyViewed} handleRecentlyViewed={handleRecentlyViewed} />
