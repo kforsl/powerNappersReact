@@ -16,3 +16,11 @@
     --gradient-light-top: linear-gradient(180deg, rgba(51,71,86,1) 0%, rgba(8,32,50,0.9) 100%);
     --gradient-dark-top: linear-gradient(0deg, rgba(51,71,86,1) 0%, rgba(8,32,50,0.9) 100%);
 }
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    background-color: var(--blue-color-light);
+}

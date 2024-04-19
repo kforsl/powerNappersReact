@@ -1,28 +1,18 @@
 import { useState } from "react"
-import { Route, Routes } from "react-router-dom"
 import Header from "./components/header/Header"
 import Footer from "./components/footer/Footer"
+import { Route, Routes } from "react-router-dom"
 import HomePage from "./pages/homePage/HomePage.jsx"
 import SearchPage from "./pages/searchPage/SearchPage.jsx"
+import handleSearchInput from './components/header/Header.jsx'
 import FavoritesPage from './pages/favoritesPage/FavoritesPage';
 import WatchListPage from './pages/watchListPage/WatchListPage';
 import SingleMoviePage from './pages/singleMoviePage/SingleMoviePage';
 
 
+
 function App() {
-
     const [recentlyViewed, setRecentlyViewed] = useState([])
-
-    const [favoritMovies, setFavoritMovies] = useState([])
-    const [watchlist, setWatchlist] = useState([])
-
-    const handleFavorites = () => {
-        console.log('handleFavorites');
-    }
-    const handleWatchlist = () => {
-        console.log('handleWatchlist');
-    }
-
     const handleRecentlyViewed = (movie) => {
         if (movie === 'clear') {
             setRecentlyViewed([])
@@ -38,24 +28,38 @@ function App() {
         }
     }
 
+    const [favoriteMovies, setFavoriteMovies] = useState([]);
+    const [watchlist, setWatchlist] = useState([]);
+
+    const handleFavorites = () => {
+        console.log('handleFavorites');
+    }
+    const handleWatchlist = () => {
+        console.log('handleWatchlist');
+    }
+
     return (
-        <div>
-            <Header />
+        <div className="app">
+            <Header handleSearchInput={handleSearchInput} />
             <Routes>
                 <Route path="/" element={
                     <HomePage
-                        favoritMovies={favoritMovies}
                         watchlist={watchlist}
+                        favoriteMovies={favoriteMovies}
                         handleFavorites={handleFavorites}
                         handleWatchlist={handleWatchlist}
-                    />
-                }
-                />
+                    />} />
                 <Route path="/search/:id" element={<SearchPage />} />
                 <Route path="/watchlist/" element={<WatchListPage />} />
                 <Route path="/favorites/" element={<FavoritesPage />} />
-                <Route path="/singlemovie/:id" element={<SingleMoviePage
-                    handleRecentlyViewed={handleRecentlyViewed} />} />
+                <Route path="/singlemovie/:id" element={
+                    <SingleMoviePage
+                        watchlist={watchlist}
+                        favoriteMovies={favoriteMovies}
+                        handleFavorites={handleFavorites}
+                        handleWatchlist={handleWatchlist}
+                        handleRecentlyViewed={handleRecentlyViewed}
+                    />} />
             </Routes>
             <Footer recentlyViewed={recentlyViewed} handleRecentlyViewed={handleRecentlyViewed} />
         </div>

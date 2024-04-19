@@ -1,11 +1,11 @@
 import './header.css'
+import axios from 'axios';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import searchIcon from '../../assets/searchIcon.svg'
-import axios from 'axios';
 
 
-const apiKey = ``
+const apiKey = `2799d50`
 
 function Header() {
 
@@ -91,7 +91,7 @@ function Header() {
         </div>
         <nav className='header__nav'>
           <ul className='header__nav-list'>
-            <Link to="/" className='header__linktag' >
+            <Link  to="/" className='header__linktag' >
               <li onClick={activeBtn} className='header__list-item'>Home</li>
             </Link>
             <Link to="/favorites/" className='header__linktag'>

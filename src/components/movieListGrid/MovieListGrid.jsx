@@ -1,12 +1,23 @@
 import './movieListGrid.css'
+import MovieCard from '../movieCard/MovieCard';
 
-function MovieListGrid({ movies }) {
+
+function MovieListGrid({ movies, favoriteMovies, watchlist, handleFavorites, handleWatchlist }) {
     return (
-        <div>{
-            movies.map((movie, index) => {
-                return <h6 key={movie.title} index={index + 1}>{movie.title}</h6>
-            })
-        }</div>
+
+        <div className='movieListGrid'>
+            {movies.map(movie => (
+                <MovieCard
+                    key={movie.imdbid}
+                    movie={movie}
+                    handleFavorites={handleFavorites}
+                    handleWatchlist={handleWatchlist}
+                    favoriteMovies={favoriteMovies}
+                    watchlist={watchlist}
+                />
+            ))}
+        </div>
+
     )
 }
 
