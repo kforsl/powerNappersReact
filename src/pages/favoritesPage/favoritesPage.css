@@ -1,0 +1,11 @@
+.favoritePage-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.favoritePage-heading {
+    color: var(--text-color);
+    padding: 2rem;
+    padding-bottom: 0;
+}

@@ -1,8 +1,18 @@
+import MovieListGrid from '../../components/movieListGrid/MovieListGrid';
 import './favoritesPage.css'
 
-function FavoritesPage() {
+function FavoritesPage({ favoriteMovies, watchlist, handleFavorites, handleWatchlist }) {
   return (
-    <div>FavoritesPage</div>
+    <main className='favoritePage-container'>
+      <h1 className='favoritePage-heading'></h1>
+      <MovieListGrid
+        movies={favoriteMovies}
+        watchlist={watchlist}
+        favoriteMovies={favoriteMovies}
+        handleFavorites={handleFavorites}
+        handleWatchlist={handleWatchlist}
+      />
+    </main>
   )
 }
 

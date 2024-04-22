@@ -29,9 +29,18 @@ function App() {
     const [favoriteMovies, setFavoriteMovies] = useState([]);
     const [watchlist, setWatchlist] = useState([]);
 
-    const handleFavorites = () => {
-        console.log('handleFavorites');
+    const handleFavorites = (movie) => {
+        if (favoriteMovies.find(m => m.imdbid === movie.imdbid)) {
+            const updatedFavorite = favoriteMovies.filter(m => m.imdbid !== movie.imdbid)
+            setFavoriteMovies(updatedFavorite)
+        }
+        else {
+            const updatedFavorite = [...favoriteMovies]
+            updatedFavorite.unshift(movie)
+            setFavoriteMovies(updatedFavorite)
+        }
     }
+
     const handleWatchlist = (movie) => {
         if (watchlist.find(m => m.imdbid === movie.imdbid)) {
             const newWatchlist = watchlist.filter(m => m.imdbid !== movie.imdbid)
@@ -63,7 +72,12 @@ function App() {
                         handleFavorites={handleFavorites}
                         handleWatchlist={handleWatchlist}
                     />} />
-                <Route path="/favorites/" element={<FavoritesPage />} />
+                <Route path="/favorites/" element={<FavoritesPage
+                    watchlist={watchlist}
+                    favoriteMovies={favoriteMovies}
+                    handleFavorites={handleFavorites}
+                    handleWatchlist={handleWatchlist}
+                />} />
                 <Route path="/singlemovie/:id" element={
                     <SingleMoviePage
                         watchlist={watchlist}
