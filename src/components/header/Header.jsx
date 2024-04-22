@@ -9,27 +9,27 @@ const apiKey = `2799d50`
 
 function Header() {
 
-  const [searchResult, setSearchResult] = useState([])
-  const [searchValue, setSearchValue] = useState('')
+    const [searchResult, setSearchResult] = useState([])
+    const [searchValue, setSearchValue] = useState('')
 
-  const handleSearchInput = (event) => {
-    setSearchValue(event.target.value)
-    axios.get(`http://www.omdbapi.com/?apikey=${apiKey}&s=${event.target.value}`)
-      .then(res => {
-        if (res.data.Search) {
-          setSearchResult(res.data.Search);
-        } else {
-          setSearchResult([])
-        }
-      })
-      .catch(error => console.log(error))
-  }
+    const handleSearchInput = (event) => {
+        setSearchValue(event.target.value)
+        axios.get(`http://www.omdbapi.com/?apikey=${apiKey}&s=${event.target.value}`)
+            .then(res => {
+                if (res.data.Search) {
+                    setSearchResult(res.data.Search);
+                } else {
+                    setSearchResult([])
+                }
+            })
+            .catch(error => console.log(error))
+    }
 
-  const handleClose = () => {
-    setSearchResult([])
-    const input = document.querySelector(`#inputField`)
-    input.value = ``
-  }
+    const handleClose = () => {
+        setSearchResult([])
+        const input = document.querySelector(`#inputField`)
+        input.value = ``
+    }
 
   const activeBtn = (e) => {
     document.querySelectorAll(`.header__list-item`)
@@ -37,12 +37,12 @@ function Header() {
         item.classList.remove(`active`)
       })
 
-    if (e.target.tagName === 'LI') {
-        e.target.classList.add(`active`)
-    } else if (e.target.tagName === 'H1') {
-      document.querySelector(`.header__list-item`).classList.add(`active`)
+        if (e.target.tagName === 'LI') {
+            e.target.classList.add(`active`)
+        } else if (e.target.tagName === 'H1') {
+            document.querySelector(`.header__list-item`).classList.add(`active`)
+        }
     }
-  }
 
 
   return (
