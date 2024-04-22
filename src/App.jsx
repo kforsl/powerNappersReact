@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Header from "./components/header/Header"
 import Footer from "./components/footer/Footer"
 import { Route, Routes } from "react-router-dom"
@@ -8,8 +8,6 @@ import handleSearchInput from './components/header/Header.jsx'
 import FavoritesPage from './pages/favoritesPage/FavoritesPage';
 import WatchListPage from './pages/watchListPage/WatchListPage';
 import SingleMoviePage from './pages/singleMoviePage/SingleMoviePage';
-
-
 
 function App() {
     const [recentlyViewed, setRecentlyViewed] = useState([])
@@ -34,8 +32,16 @@ function App() {
     const handleFavorites = () => {
         console.log('handleFavorites');
     }
-    const handleWatchlist = () => {
-        console.log('handleWatchlist');
+    const handleWatchlist = (movie) => {
+        if (watchlist.find(m => m.imdbid === movie.imdbid)) {
+            const newWatchlist = watchlist.filter(m => m.imdbid !== movie.imdbid)
+            setWatchlist(newWatchlist)
+        }
+        else {
+            const newWatchlist = [...watchlist]
+            newWatchlist.unshift(movie)
+            setWatchlist(newWatchlist)
+        }
     }
 
     return (
@@ -56,7 +62,13 @@ function App() {
                         handleFavorites={handleFavorites}
                         handleWatchlist={handleWatchlist}
                      />} />
-                <Route path="/watchlist/" element={<WatchListPage />} />
+                <Route path="/watchlist/" element={
+                    <WatchListPage
+                        watchlist={watchlist}
+                        favoriteMovies={favoriteMovies}
+                        handleFavorites={handleFavorites}
+                        handleWatchlist={handleWatchlist}
+                    />} />
                 <Route path="/favorites/" element={<FavoritesPage />} />
                 <Route path="/singlemovie/:id" element={
                     <SingleMoviePage
