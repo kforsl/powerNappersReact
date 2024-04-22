@@ -91,9 +91,9 @@ function Header() {
                 </div>
                 <nav className='header__nav'>
                     <ul className='header__nav-list'>
-                        {/* <Link to="/" className='header__linktag' >
+                        <Link to="/" className='header__linktag' >
                             <li onClick={activeBtn} className='header__list-item'>Home</li>
-                        </Link> */}
+                        </Link>
                         <Link to="/favorites/" className='header__linktag'>
                             <li onClick={activeBtn} className='header__list-item'>Favorites</li>
                         </Link>
