@@ -37,16 +37,18 @@ function SingleMoviePage(
 
     useEffect(() => {
         getApi();
-        if (clickedMovie.imdbID !== undefined) {
-            handleRecentlyViewed(clickedMovie)
-        }
-    }, [id, clickedMovie])
+
+    }, [id])
 
     useEffect(() => {
-        if (favoriteMovies && favoriteMovies.length > 0) {
+        handleRecentlyViewed(clickedMovie)
+    }, [clickedMovie])
+
+    useEffect(() => {
+        if (favoriteMovies) {
             setIsInFavorites(favoriteMovies.some(item => item.imdbID === clickedMovie.imdbID));
         }
-        if (watchList && watchList.length > 0) {
+        if (watchList) {
             setIsInWatchlist(watchList.some(item => item.imdbID === clickedMovie.imdbID));
         }
     }, [clickedMovie, favoriteMovies, watchList]);

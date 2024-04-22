@@ -12,6 +12,8 @@
     z-index: 3;
     display: flex;
     align-items: center;
+    pointer-events: none;
+
 }
 
 .trailer-carousel__fade-left {
@@ -31,6 +33,7 @@
     border: none;
     cursor: pointer;
     padding: 1rem;
+    pointer-events: all;
 }
 
 .trailer-carousel__item-1,
@@ -43,6 +46,7 @@
     aspect-ratio: 16/9;
     transition: all .2s ease-in;
     top: 50%;
+    pointer-events: none;
 }
 
 .trailer-carousel__item-1 {
@@ -60,6 +64,7 @@
     height: 250px;
     left: 50%;
     z-index: 2;
+    pointer-events: all;
 }
 
 .trailer-carousel__item-4 {

@@ -15,14 +15,19 @@ function App() {
         if (movie === 'clear') {
             setRecentlyViewed([])
         } else {
-            const newClickedMovie = { ...movie }
-            const newRecentlyViewed = []
-            const filterdRecently = recentlyViewed.filter(m => m.imdbID !== newClickedMovie.imdbID)
-            for (let i = 0; i < 5; i++) {
-                filterdRecently[i] && newRecentlyViewed.push(filterdRecently[i])
+            if (movie.imdbID !== undefined) {
+                const newRecentlyViewed = []
+                console.log([...recentlyViewed]);
+                [...recentlyViewed].some(m => m.imdbID === movie.imdbID) ? console.log(true) : console.log(false);
+                for (let i = 0; i < 6; i++) {
+                    if (recentlyViewed[i]) {
+                        console.log(recentlyViewed[i]);
+                        recentlyViewed[i].imdbID !== movie.imdbID && newRecentlyViewed.push(recentlyViewed[i])
+                    }
+                }
+                newRecentlyViewed.unshift(movie)
+                setRecentlyViewed(newRecentlyViewed)
             }
-            newRecentlyViewed.unshift(newClickedMovie)
-            setRecentlyViewed(newRecentlyViewed)
         }
     }
 
@@ -70,7 +75,7 @@ function App() {
                         favoriteMovies={favoriteMovies}
                         handleFavorites={handleFavorites}
                         handleWatchlist={handleWatchlist}
-                     />} />
+                    />} />
                 <Route path="/watchlist/" element={
                     <WatchListPage
                         watchlist={watchlist}
