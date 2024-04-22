@@ -3,33 +3,32 @@ import axios from 'axios';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import searchIcon from '../../assets/searchIcon.svg'
+import apiKey from '../../../apiKey.js'
 
-
-const apiKey = `2799d50`
 
 function Header() {
 
-    const [searchResult, setSearchResult] = useState([])
-    const [searchValue, setSearchValue] = useState('')
+  const [searchResult, setSearchResult] = useState([])
+  const [searchValue, setSearchValue] = useState('')
 
-    const handleSearchInput = (event) => {
-        setSearchValue(event.target.value)
-        axios.get(`http://www.omdbapi.com/?apikey=${apiKey}&s=${event.target.value}`)
-            .then(res => {
-                if (res.data.Search) {
-                    setSearchResult(res.data.Search);
-                } else {
-                    setSearchResult([])
-                }
-            })
-            .catch(error => console.log(error))
-    }
+  const handleSearchInput = (event) => {
+    setSearchValue(event.target.value)
+    axios.get(`http://www.omdbapi.com/?apikey=${apiKey}&s=${event.target.value}`)
+      .then(res => {
+        if (res.data.Search) {
+          setSearchResult(res.data.Search);
+        } else {
+          setSearchResult([])
+        }
+      })
+      .catch(error => console.log(error))
+  }
 
-    const handleClose = () => {
-        setSearchResult([])
-        const input = document.querySelector(`#inputField`)
-        input.value = ``
-    }
+  const handleClose = () => {
+    setSearchResult([])
+    const input = document.querySelector(`#inputField`)
+    input.value = ``
+  }
 
   const activeBtn = (e) => {
     document.querySelectorAll(`.header__list-item`)
@@ -37,12 +36,12 @@ function Header() {
         item.classList.remove(`active`)
       })
 
-        if (e.target.tagName === 'LI') {
-            e.target.classList.add(`active`)
-        } else if (e.target.tagName === 'H1') {
-            document.querySelector(`.header__list-item`).classList.add(`active`)
-        }
+    if (e.target.tagName === 'LI') {
+      e.target.classList.add(`active`)
+    } else if (e.target.tagName === 'H1') {
+      document.querySelector(`.header__list-item`).classList.add(`active`)
     }
+  }
 
 
   return (
@@ -52,6 +51,14 @@ function Header() {
           <h1 className='header__heading'>NAPFLIX</h1>
         </Link>
         <div className='search-container'>
+          <input
+            id='inputField'
+            onChange={handleSearchInput}
+            className='header__input'
+            type="text"
+            placeholder='Search...'
+            aria-label='search bar field'
+          />
           <section className='search-dropdown'> {
             searchResult.map((result) => {
               return (
@@ -69,14 +76,6 @@ function Header() {
               )
             })}
           </section>
-          <input
-            id='inputField'
-            onChange={handleSearchInput}
-            className='header__input'
-            type="text"
-            placeholder='Search...'
-            aria-label='search bar field'
-          />
           <Link
             onClick={handleClose}
             to={`/search/${searchValue}`}
@@ -91,7 +90,7 @@ function Header() {
         </div>
         <nav className='header__nav'>
           <ul className='header__nav-list'>
-            <Link  to="/" className='header__linktag' >
+            <Link to="/" className='header__linktag' >
               <li onClick={activeBtn} className='header__list-item'>Home</li>
             </Link>
             <Link to="/favorites/" className='header__linktag'>

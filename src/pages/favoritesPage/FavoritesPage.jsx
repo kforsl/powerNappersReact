@@ -4,7 +4,7 @@ import './favoritesPage.css'
 function FavoritesPage({ favoriteMovies, watchlist, handleFavorites, handleWatchlist }) {
   return (
     <main className='favoritePage-container'>
-      <h1 className='favoritePage-heading'></h1>
+      <h1 className='favoritePage-heading'>My favorites</h1>
       <MovieListGrid
         movies={favoriteMovies}
         watchlist={watchlist}

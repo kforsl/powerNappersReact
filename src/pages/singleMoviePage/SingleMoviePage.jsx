@@ -7,9 +7,7 @@ import { useParams } from 'react-router-dom';
 import checkedIcon from '../../assets/checked.svg'
 import filledStar from '../../assets/starFilled.svg'
 import missingPoster from '../../assets/missingPoster.svg'
-
-
-const apiKey = `2799d50`
+import apiKey from '../../../apiKey';
 
 function SingleMoviePage(
     {
@@ -88,7 +86,7 @@ function SingleMoviePage(
                     <section className='singleMovie__wrapper-upper'>
                         <section className='singleMovie__heading-container'>
                             <h2 className='singleMovie__heading'>{clickedMovie.Title}</h2>
-                            <figure className='singleMovie__icon-container'>
+                            <figure>
                                 <img
                                     onClick={handleWatchListIcon}
                                     className='singleMovie__plus-icon'

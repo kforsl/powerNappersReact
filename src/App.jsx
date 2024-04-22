@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Header from "./components/header/Header"
 import Footer from "./components/footer/Footer"
 import { Route, Routes } from "react-router-dom"
@@ -70,7 +70,7 @@ function App() {
                         favoriteMovies={favoriteMovies}
                         handleFavorites={handleFavorites}
                         handleWatchlist={handleWatchlist}
-                     />} />
+                    />} />
                 <Route path="/watchlist/" element={
                     <WatchListPage
                         watchlist={watchlist}
@@ -78,12 +78,13 @@ function App() {
                         handleFavorites={handleFavorites}
                         handleWatchlist={handleWatchlist}
                     />} />
-                <Route path="/favorites/" element={<FavoritesPage
-                    watchlist={watchlist}
-                    favoriteMovies={favoriteMovies}
-                    handleFavorites={handleFavorites}
-                    handleWatchlist={handleWatchlist}
-                />} />
+                <Route path="/favorites/" element={
+                    <FavoritesPage
+                        watchlist={watchlist}
+                        favoriteMovies={favoriteMovies}
+                        handleFavorites={handleFavorites}
+                        handleWatchlist={handleWatchlist}
+                    />} />
                 <Route path="/singlemovie/:id" element={
                     <SingleMoviePage
                         watchlist={watchlist}

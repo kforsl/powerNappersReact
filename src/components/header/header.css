@@ -25,6 +25,7 @@
 .search-dropdown {
     top: 24px;
     width: 100%;
+    z-index: 999;
     position: absolute;
     border-radius: 0 0 10px 10px;
     background: var(--text-color);
@@ -60,6 +61,10 @@
     outline: none;
     padding: .5rem;
     border-radius: 10px 0 0 10px;
+}
+
+.header__input:not(:focus) + .search-dropdown {
+    display: none;
 }
 
 .header__linktag { text-decoration: none; }
