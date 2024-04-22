@@ -15,14 +15,16 @@ function App() {
         if (movie === 'clear') {
             setRecentlyViewed([])
         } else {
-            const newClickedMovie = { ...movie }
-            const newRecentlyViewed = []
-            const filterdRecently = recentlyViewed.filter(m => m.imdbID !== newClickedMovie.imdbID)
-            for (let i = 0; i < 5; i++) {
-                filterdRecently[i] && newRecentlyViewed.push(filterdRecently[i])
+            if (movie.imdbID !== undefined) {
+                const newRecentlyViewed = []
+                for (let i = 0; i < 6; i++) {
+                    if (recentlyViewed[i]) {
+                        recentlyViewed[i].imdbID !== movie.imdbID && newRecentlyViewed.push(recentlyViewed[i])
+                    }
+                }
+                newRecentlyViewed.unshift(movie)
+                setRecentlyViewed(newRecentlyViewed)
             }
-            newRecentlyViewed.unshift(newClickedMovie)
-            setRecentlyViewed(newRecentlyViewed)
         }
     }
 
