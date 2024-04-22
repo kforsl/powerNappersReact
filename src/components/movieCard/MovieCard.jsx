@@ -11,6 +11,16 @@ function MovieCard({ movie, favoriteMovies, watchlist, handleFavorites, handleWa
     setIsInFavorites(favoriteMovies.some(item => item.imdbid === movie.imdbid || item.imdbID === movie.imdbID));
   }, [watchlist, favoriteMovies, movie]);
 
+      const toggleWatchlist = () => {
+    if (isInWatchlist) {
+      handleWatchlist(movie, 'remove');
+      setIsInWatchlist(false);
+    } else {
+      handleWatchlist(movie, 'add');
+      setIsInWatchlist(true);
+    }
+  };
+
     const toggleFavorites = () => {
         if (isInFavorites) {
             handleFavorites(movie, 'remove');
