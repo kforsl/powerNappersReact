@@ -62,10 +62,8 @@ function SingleMoviePage(
     const handleFavoriteIcon = () => {
         if (isInFavorites) {
             handleFavorites(clickedMovie, 'remove')
-            console.log(handleFavorites, 'removed');
         } else {
             handleFavorites(clickedMovie, 'add')
-            console.log(handleFavorites, 'added');
         }
         setIsInFavorites(!isInFavorites)
     }
@@ -73,10 +71,8 @@ function SingleMoviePage(
     const handleWatchListIcon = () => {
         if (isInWatchlist) {
             handleWatchlist(clickedMovie, 'remove')
-            console.log(handleWatchlist, 'removed');
         } else {
             handleWatchlist(clickedMovie, 'add')
-            console.log(handleWatchlist, 'added');
         }
         setIsInWatchlist(!isInWatchlist)
     }

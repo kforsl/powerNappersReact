@@ -17,11 +17,8 @@ function App() {
         } else {
             if (movie.imdbID !== undefined) {
                 const newRecentlyViewed = []
-                console.log([...recentlyViewed]);
-                [...recentlyViewed].some(m => m.imdbID === movie.imdbID) ? console.log(true) : console.log(false);
                 for (let i = 0; i < 6; i++) {
                     if (recentlyViewed[i]) {
-                        console.log(recentlyViewed[i]);
                         recentlyViewed[i].imdbID !== movie.imdbID && newRecentlyViewed.push(recentlyViewed[i])
                     }
                 }
