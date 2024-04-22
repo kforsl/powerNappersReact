@@ -3,8 +3,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import MovieListGrid from '../../components/movieListGrid/MovieListGrid';
 import './searchPage.css'
-
-const apiKey = `2799d50`;
+import apiKey from '../../../apiKey.js';
 
 function SearchPage( { favoriteMovies, watchlist, handleFavorites, handleWatchlist } ) {
   const { searchTerm } = useParams();
