@@ -55,7 +55,13 @@ function App() {
                         handleFavorites={handleFavorites}
                         handleWatchlist={handleWatchlist}
                     />} />
-                <Route path="/search/:id" element={<SearchPage />} />
+                <Route path="/search/:searchTerm" element={
+                    <SearchPage
+                        watchlist={watchlist}
+                        favoriteMovies={favoriteMovies}
+                        handleFavorites={handleFavorites}
+                        handleWatchlist={handleWatchlist}
+                     />} />
                 <Route path="/watchlist/" element={
                     <WatchListPage
                         watchlist={watchlist}

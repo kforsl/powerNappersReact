@@ -6,9 +6,9 @@ function MovieCard({ movie, favoriteMovies, watchlist, handleFavorites, handleWa
   const [isInWatchlist, setIsInWatchlist] = useState(false);
   const [isInFavorites, setIsInFavorites] = useState(false);
 
-  useEffect(() => {
-    setIsInWatchlist(watchlist.some(item => item.imdbid === movie.imdbid));
-    setIsInFavorites(favoriteMovies.some(item => item.imdbid === movie.imdbid));
+  useEffect(() => {    
+    setIsInWatchlist(watchlist.some(item => item.imdbid === movie.imdbid || item.imdbID === movie.imdbID));
+    setIsInFavorites(favoriteMovies.some(item => item.imdbid === movie.imdbid || item.imdbID === movie.imdbID));
   }, [watchlist, favoriteMovies, movie]);
 
   const toggleWatchlist = () => {
@@ -33,10 +33,10 @@ function MovieCard({ movie, favoriteMovies, watchlist, handleFavorites, handleWa
 
   return (
     <article className='movieCard'>
-      <Link to="//singlemoviepage/:id">
-        <img className='movieCard__poster' src={movie.poster} alt={movie.title} />
+      <Link to={`/singlemovie/${movie.imdbid ? movie.imdbid : movie.imdbID}`}>
+        <img className='movieCard__poster' src={movie.poster ? movie.poster : movie.Poster} alt={movie.title ? movie.title : movie.Title} />
         <section className='movieCard__overlay'>
-          <h2 className='movieCard__title'>{movie.title} </h2>
+          <h2 className='movieCard__title'>{movie.title ? movie.title : movie.Title} </h2>
 
           <div className="movieCard__actions">
             <button className='watchlist-btn' onClick={(e) => { e.preventDefault(); toggleWatchlist() }}>
