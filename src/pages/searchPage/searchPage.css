@@ -1,0 +1,17 @@
+.searchPage {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+}
+
+.searchPage__title {
+    color: var(--text-color);
+    font-family: var(--font-standard);
+    padding: 2rem;
+    padding-bottom: 0;
+}
+
+.searchPage__title span {
+    font-style: italic;
+    color: var(--accent-color);   
+}

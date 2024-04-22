@@ -4,11 +4,10 @@ import MovieCard from '../movieCard/MovieCard';
 
 function MovieListGrid({ movies, favoriteMovies, watchlist, handleFavorites, handleWatchlist }) {
     return (
-
         <div className='movieListGrid'>
             {movies.map(movie => (
                 <MovieCard
-                    key={movie.imdbid}
+                    key={movie.imdbid ? movie.imdbid : movie.imdbID}
                     movie={movie}
                     handleFavorites={handleFavorites}
                     handleWatchlist={handleWatchlist}
@@ -17,7 +16,6 @@ function MovieListGrid({ movies, favoriteMovies, watchlist, handleFavorites, han
                 />
             ))}
         </div>
-
     )
 }
 

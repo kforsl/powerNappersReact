@@ -31,11 +31,11 @@ function Header() {
         input.value = ``
     }
 
-    const activeBtn = (e) => {
-        document.querySelectorAll(`.header__list-item`)
-            .forEach(item => {
-                item.classList.remove(`active`)
-            })
+  const activeBtn = (e) => {
+    document.querySelectorAll(`.header__list-item`)
+      .forEach(item => {
+        item.classList.remove(`active`)
+      })
 
         if (e.target.tagName === 'LI') {
             e.target.classList.add(`active`)
@@ -45,66 +45,66 @@ function Header() {
     }
 
 
-    return (
-        <header className='header'>
-            <section className='header__container'>
-                <Link to="/" onClick={activeBtn} className='header__linktag' >
-                    <h1 className='header__heading'>NAPFLIX</h1>
+  return (
+    <header className='header'>
+      <section className='header__container'>
+        <Link to="/" onClick={activeBtn} className='header__linktag' >
+          <h1 className='header__heading'>NAPFLIX</h1>
+        </Link>
+        <div className='search-container'>
+          <section className='search-dropdown'> {
+            searchResult.map((result) => {
+              return (
+                <Link
+                  onClick={handleClose}
+                  className='search-dropdown__link'
+                  key={result.imdbID}
+                  to={`/singlemovie/${result.imdbID}`}>
+                  <p className='search-dropdown__item'>
+                    {
+                      result.Title
+                    }
+                  </p>
                 </Link>
-                <div className='search-container'>
-                    <section className='search-dropdown'> {
-                        searchResult.map((result) => {
-                            return (
-                                <Link
-                                    onClick={handleClose}
-                                    className='search-dropdown__link'
-                                    key={result.imdbID}
-                                    to={`/singlemovie/${result.imdbID}`}>
-                                    <p className='search-dropdown__item'>
-                                        {
-                                            result.Title
-                                        }
-                                    </p>
-                                </Link>
-                            )
-                        })}
-                    </section>
-                    <input
-                        id='inputField'
-                        onChange={handleSearchInput}
-                        className='header__input'
-                        type="text"
-                        placeholder='Search...'
-                        aria-label='search bar field'
-                    />
-                    <Link
-                        onClick={handleClose}
-                        to={`/search/${searchValue}`}
-                        className='header__linktag header__btn'
-                    >
-                        <img
-                            className='header__search-icon'
-                            src={searchIcon}
-                            alt='search icon'
-                        />
-                    </Link>
-                </div>
-                <nav className='header__nav'>
-                    <ul className='header__nav-list'>
-                        <Link to="/" className='header__linktag' >
-                            <li onClick={activeBtn} className='header__list-item'>Home</li>
-                        </Link>
-                        <Link to="/favorites/" className='header__linktag'>
-                            <li onClick={activeBtn} className='header__list-item'>Favorites</li>
-                        </Link>
-                        <Link to="/watchlist/" className='header__linktag'>
-                            <li onClick={activeBtn} className='header__list-item'>Watchlist</li>
-                        </Link>
-                    </ul>
-                </nav>
-            </section>
-        </header>
-    )
+              )
+            })}
+          </section>
+          <input
+            id='inputField'
+            onChange={handleSearchInput}
+            className='header__input'
+            type="text"
+            placeholder='Search...'
+            aria-label='search bar field'
+          />
+          <Link
+            onClick={handleClose}
+            to={`/search/${searchValue}`}
+            className='header__linktag header__btn'
+          >
+            <img
+              className='header__search-icon'
+              src={searchIcon}
+              alt='search icon'
+            />
+          </Link>
+        </div>
+        <nav className='header__nav'>
+          <ul className='header__nav-list'>
+            <Link  to="/" className='header__linktag' >
+              <li onClick={activeBtn} className='header__list-item'>Home</li>
+            </Link>
+            <Link to="/favorites/" className='header__linktag'>
+              <li onClick={activeBtn} className='header__list-item'>Favorites</li>
+            </Link>
+            <Link to="/watchlist/" className='header__linktag'>
+              <li onClick={activeBtn} className='header__list-item'>Watchlist</li>
+            </Link>
+          </ul>
+        </nav>
+      </section>
+    </header>
+  )
 }
 
 export default Header;
