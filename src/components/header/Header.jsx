@@ -31,7 +31,7 @@ function Header() {
     input.value = ``
   }
 
-  const activeBtn = () => {
+  const activeBtn = (e) => {
     document.querySelectorAll(`.header__list-item`)
       .forEach(item => {
         item.classList.remove(`active`)
