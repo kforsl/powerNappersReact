@@ -32,8 +32,8 @@ function App() {
 
     const handleFavorites = (movie) => {
         if (movie.imdbID) {
-            if (favoriteMovies.find(m => m.imdbID === movie.imdbID)) {
-                const updatedFavorite = favoriteMovies.filter(m => m.imdbID !== movie.imdbID)
+            if (favoriteMovies.find(m => m.imdbID === movie.imdbID || m.imdbid === movie.imdbID)) {
+                const updatedFavorite = favoriteMovies.filter(m => m.imdbID !== movie.imdbID && m.imdbid !== movie.imdbID)
                 setFavoriteMovies(updatedFavorite)
             }
             else {
@@ -42,8 +42,8 @@ function App() {
                 setFavoriteMovies(updatedFavorite)
             }
         } else {
-            if (favoriteMovies.find(m => m.imdbid === movie.imdbid)) {
-                const updatedFavorite = favoriteMovies.filter(m => m.imdbid !== movie.imdbid)
+            if (favoriteMovies.find(m => m.imdbid === movie.imdbid || m.imdbID === movie.imdbid)) {
+                const updatedFavorite = favoriteMovies.filter(m => m.imdbid !== movie.imdbid && m.imdbID !== movie.imdbid)
                 setFavoriteMovies(updatedFavorite)
             }
             else {
@@ -55,8 +55,8 @@ function App() {
     }
     const handleWatchlist = (movie) => {
         if (movie.imdbID) {
-            if (watchlist.find(m => m.imdbID === movie.imdbID)) {
-                const newWatchlist = watchlist.filter(m => m.imdbID !== movie.imdbID)
+            if (watchlist.find(m => m.imdbID === movie.imdbID || m.imdbid === movie.imdbID)) {
+                const newWatchlist = watchlist.filter(m => m.imdbID !== movie.imdbID && m.imdbid !== movie.imdbID)
                 setWatchlist(newWatchlist)
             } else {
                 const newWatchlist = [...watchlist]
@@ -64,8 +64,8 @@ function App() {
                 setWatchlist(newWatchlist)
             }
         } else {
-            if (watchlist.find(m => m.imdbid === movie.imdbid)) {
-                const newWatchlist = watchlist.filter(m => m.imdbid !== movie.imdbid)
+            if (watchlist.find(m => m.imdbid === movie.imdbid || m.imdbID === movie.imdbid)) {
+                const newWatchlist = watchlist.filter(m => m.imdbid !== movie.imdbid && m.imdbID !== movie.imdbid)
                 setWatchlist(newWatchlist)
             } else {
                 const newWatchlist = [...watchlist]

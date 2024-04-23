@@ -1,6 +1,6 @@
 .home-page {
     background-color: var(--blue-color-light);
-    padding: 2rem 0;
+    padding-top: 2rem;
 }
 
 .home-page__content {
