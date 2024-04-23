@@ -15,10 +15,10 @@ const getTopMovies = (setTopMovies) => {
         .catch(error => console.log(error))
 }
 
-const getfeaturedMovies = (setFeaturedTrailers, topMovies, featuredTrailers) => {
-    if (topMovies.length !== 0) {
+const getfeaturedMovies = (setFeaturedTrailers, movieOptions, featuredTrailers) => {
+    if (movieOptions.length !== 0) {
         if (featuredTrailers.length !== 5) {
-            const movies = [...topMovies]
+            const movies = [...movieOptions]
             const newFeaturedTrailers = []
 
 
