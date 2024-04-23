@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 import searchIcon from '../../assets/searchIcon.svg'
 import apiKey from '../../../apiKey.js'
 
-
 function Header() {
-
     const [searchResult, setSearchResult] = useState([])
     const [searchValue, setSearchValue] = useState('')
 
@@ -38,7 +36,7 @@ function Header() {
 
         if (e.target.tagName === 'LI') {
             e.target.classList.add(`active`)
-        } else if (e.target.tagName === 'H1') {
+        } else if (e.target.tagName === 'IMG') {
             document.querySelector(`.header__list-item`).classList.add(`active`)
         }
     }
