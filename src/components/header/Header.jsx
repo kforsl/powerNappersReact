@@ -1,6 +1,6 @@
 import './header.css'
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import searchIcon from '../../assets/searchIcon.svg'
 import apiKey from '../../../apiKey.js'
@@ -27,6 +27,27 @@ function Header() {
         const input = document.querySelector(`#inputField`)
         input.value = ``
     }
+
+    const handleEscPress = event => {
+        if (event.key === 'Escape') {
+            document.getElementById('inputField').blur();
+            const overlay=document.createElement('div');
+            overlay.className='overlay';
+            document.body.appendChild(overlay);
+
+            overlay.addEventListener('mousemove',()=>{
+                overlay.remove();
+            }, {once:true});
+        }
+    }
+
+    useEffect(() => {
+        window.addEventListener('keydown', handleEscPress);
+
+        return () => {
+            window.removeEventListener('keydown', handleEscPress);
+        };
+    }, []);
 
     const activeBtn = (e) => {
         document.querySelectorAll(`.header__list-item`)
