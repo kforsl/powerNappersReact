@@ -13,8 +13,8 @@
     --accent-color: #FF4C29;
     --text-color: #FFFDFF;
     --font-standard: "Inter", sans-serif;
-    --gradient-light-top: linear-gradient(180deg, rgba(51,71,86,1) 0%, rgba(8,32,50,0.9) 100%);
-    --gradient-dark-top: linear-gradient(0deg, rgba(51,71,86,1) 0%, rgba(8,32,50,0.9) 100%);
+    --gradient-light-top: linear-gradient(180deg, rgba(51, 71, 86, 1) 0%, rgba(8, 32, 50, 0.9) 100%);
+    --gradient-dark-top: linear-gradient(0deg, rgba(51, 71, 86, 1) 0%, rgba(8, 32, 50, 0.9) 100%);
 }
 
 .app {

@@ -38,9 +38,8 @@
 }
 
 
-h6 {
-    margin: 1rem;
-    font-size: 2rem;
-    text-align: center;
-    color: white;
+@media screen and (max-width: 1150px) {
+    .home-page__content {
+        padding: 0 1rem;
+    }
 }

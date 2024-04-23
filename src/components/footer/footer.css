@@ -3,7 +3,7 @@
 }
 
 .footer__container {
-    padding: 1rem 2rem;
+    padding: 1rem 0;
     max-width: 1100px;
     margin: 0 auto;
     min-height: 250px;
@@ -38,4 +38,10 @@
 .footer__clear-btn:hover {
     outline: transparent;
     color: var(--accent-color);
+}
+
+@media screen and (max-width: 1150px) {
+    .footer__container {
+        padding: 1rem;
+    }
 }
