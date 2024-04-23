@@ -7,11 +7,17 @@
 .searchPage__title {
     color: var(--text-color);
     font-family: var(--font-standard);
-    padding: 2rem;
+    padding: 2rem 0;
     padding-bottom: 0;
 }
 
 .searchPage__title span {
     font-style: italic;
-    color: var(--accent-color);   
+    color: var(--accent-color);
+}
+
+@media screen and (max-width: 1150px) {
+    .searchPage {
+        padding: 0 1rem;
+    }
 }

@@ -110,3 +110,9 @@
 .active {
     color: var(--text-color);
 }
+
+@media screen and (max-width: 1150px) {
+    .header__container {
+        padding: 0 1rem;
+    }
+}
