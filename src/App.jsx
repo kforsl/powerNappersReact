@@ -31,26 +31,47 @@ function App() {
     const [watchlist, setWatchlist] = useState([]);
 
     const handleFavorites = (movie) => {
-        if (favoriteMovies.find(m => m.imdbid === movie.imdbid)) {
-            const updatedFavorite = favoriteMovies.filter(m => m.imdbid !== movie.imdbid)
-            setFavoriteMovies(updatedFavorite)
-        }
-        else {
-            const updatedFavorite = [...favoriteMovies]
-            updatedFavorite.unshift(movie)
-            setFavoriteMovies(updatedFavorite)
+        if (movie.imdbID) {
+            if (favoriteMovies.find(m => m.imdbID === movie.imdbID)) {
+                const updatedFavorite = favoriteMovies.filter(m => m.imdbID !== movie.imdbID)
+                setFavoriteMovies(updatedFavorite)
+            }
+            else {
+                const updatedFavorite = [...favoriteMovies]
+                updatedFavorite.unshift(movie)
+                setFavoriteMovies(updatedFavorite)
+            }
+        } else {
+            if (favoriteMovies.find(m => m.imdbid === movie.imdbid)) {
+                const updatedFavorite = favoriteMovies.filter(m => m.imdbid !== movie.imdbid)
+                setFavoriteMovies(updatedFavorite)
+            }
+            else {
+                const updatedFavorite = [...favoriteMovies]
+                updatedFavorite.unshift(movie)
+                setFavoriteMovies(updatedFavorite)
+            }
         }
     }
-
     const handleWatchlist = (movie) => {
-        if (watchlist.find(m => m.imdbid === movie.imdbid)) {
-            const newWatchlist = watchlist.filter(m => m.imdbid !== movie.imdbid)
-            setWatchlist(newWatchlist)
-        }
-        else {
-            const newWatchlist = [...watchlist]
-            newWatchlist.unshift(movie)
-            setWatchlist(newWatchlist)
+        if (movie.imdbID) {
+            if (watchlist.find(m => m.imdbID === movie.imdbID)) {
+                const newWatchlist = watchlist.filter(m => m.imdbID !== movie.imdbID)
+                setWatchlist(newWatchlist)
+            } else {
+                const newWatchlist = [...watchlist]
+                newWatchlist.unshift(movie)
+                setWatchlist(newWatchlist)
+            }
+        } else {
+            if (watchlist.find(m => m.imdbid === movie.imdbid)) {
+                const newWatchlist = watchlist.filter(m => m.imdbid !== movie.imdbid)
+                setWatchlist(newWatchlist)
+            } else {
+                const newWatchlist = [...watchlist]
+                newWatchlist.unshift(movie)
+                setWatchlist(newWatchlist)
+            }
         }
     }
 

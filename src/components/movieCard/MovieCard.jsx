@@ -3,33 +3,34 @@ import './movieCard.css'
 import { Link } from 'react-router-dom';
 
 function MovieCard({ movie, favoriteMovies, watchlist, handleFavorites, handleWatchlist }) {
-  const [isInWatchlist, setIsInWatchlist] = useState(false);
-  const [isInFavorites, setIsInFavorites] = useState(false);
+    const [isInWatchlist, setIsInWatchlist] = useState(false);
+    const [isInFavorites, setIsInFavorites] = useState(false);
 
-  useEffect(() => {
-    setIsInWatchlist(watchlist.some(item => item.imdbid === movie.imdbid));
-    setIsInFavorites(favoriteMovies.some(item => item.imdbid === movie.imdbid));
-  }, [watchlist, favoriteMovies, movie]);
+    useEffect(() => {
+        if (movie.imdbID) {
+            setIsInWatchlist(watchlist.some(item => item.imdbID === movie.imdbID))
+            setIsInFavorites(favoriteMovies.some(item => item.imdbID === movie.imdbID))
+        } else if (movie.imdbid) {
+            setIsInWatchlist(watchlist.some(item => item.imdbid === movie.imdbid))
+            setIsInFavorites(favoriteMovies.some(item => item.imdbid === movie.imdbid))
+        }
+    }, [watchlist, favoriteMovies, movie]);
 
-  const toggleWatchlist = () => {
-    if (isInWatchlist) {
-      handleWatchlist(movie, 'remove');
-      setIsInWatchlist(false);
-    } else {
-      handleWatchlist(movie, 'add');
-      setIsInWatchlist(true);
-    }
-  };
+    const toggleWatchlist = () => {
+        if (isInWatchlist) {
+            handleWatchlist(movie);
+        } else {
+            handleWatchlist(movie);
+        }
+    };
 
-  const toggleFavorites = () => {
-    if (isInFavorites) {
-      handleFavorites(movie, 'remove');
-      setIsInFavorites(false);
-    } else {
-      handleFavorites(movie, 'add');
-      setIsInFavorites(true);
-    }
-  };
+    const toggleFavorites = () => {
+        if (isInFavorites) {
+            handleFavorites(movie);
+        } else {
+            handleFavorites(movie);
+        }
+    };
 
   return (
     <article className='movieCard'>

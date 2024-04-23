@@ -4,7 +4,7 @@
     background-color: var(--blue-color-light);
     color: var(--text-color);
     max-width: 1100px;
-    padding: 2rem;
+    padding: 2rem 0;
     gap: 2rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);

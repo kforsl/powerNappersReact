@@ -12,7 +12,7 @@ import apiKey from '../../../apiKey';
 function SingleMoviePage(
     {
         handleRecentlyViewed,
-        watchList,
+        watchlist,
         handleWatchlist,
         favoriteMovies,
         handleFavorites,
@@ -44,12 +44,12 @@ function SingleMoviePage(
 
     useEffect(() => {
         if (favoriteMovies) {
-            setIsInFavorites(favoriteMovies.some(item => item.imdbID === clickedMovie.imdbID));
+            setIsInFavorites(favoriteMovies.some(item => item.imdbID === clickedMovie.imdbID || item.imdbid === clickedMovie.imdbID));
         }
-        if (watchList) {
-            setIsInWatchlist(watchList.some(item => item.imdbID === clickedMovie.imdbID));
+        if (watchlist) {
+            setIsInWatchlist(watchlist.some(item => item.imdbID === clickedMovie.imdbID || item.imdbid === clickedMovie.imdbID));
         }
-    }, [clickedMovie, favoriteMovies, watchList]);
+    }, [clickedMovie, favoriteMovies, watchlist]);
 
     if (clickedMovie.Poster === "N/A") {
         clickedMovie.Poster = `${missingPoster}`
