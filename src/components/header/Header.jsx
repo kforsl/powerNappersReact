@@ -38,7 +38,7 @@ function Header() {
 
         if (e.target.tagName === 'LI') {
             e.target.classList.add(`active`)
-        } else if (e.target.tagName === 'H1') {
+        } else if (e.target.tagName === 'IMG') {
             document.querySelector(`.header__list-item`).classList.add(`active`)
         }
     }
