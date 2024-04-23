@@ -33,8 +33,8 @@ function App() {
 
     const handleFavorites = (movie) => {
         if (movie.imdbID) {
-            if (favoriteMovies.find(m => m.imdbid === movie.imdbid)) {
-                const updatedFavorite = favoriteMovies.filter(m => m.imdbid !== movie.imdbid)
+            if (favoriteMovies.find(m => m.imdbID === movie.imdbID)) {
+                const updatedFavorite = favoriteMovies.filter(m => m.imdbID !== movie.imdbID)
                 setFavoriteMovies(updatedFavorite)
             }
             else {
