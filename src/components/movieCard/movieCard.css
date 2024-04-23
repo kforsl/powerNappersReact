@@ -1,7 +1,4 @@
-.movieCard {
-    /* position: relative; */
-    overflow: hidden;
-}
+.movieCard { overflow: hidden; }
 
 .movieCard:hover .movieCard__poster {
     scale: 1;
@@ -27,7 +24,7 @@
     height: auto;
 }
 
-.moviCard-Link {
+.movieCard-Link {
     display: flex;
     width: 100%;
     position: relative;
@@ -49,9 +46,7 @@
     opacity: 1;
 }
 
-.movieCard:hover .movieCard__overlay {
-    bottom: 0;
-}
+.movieCard:hover .movieCard__overlay { bottom: 0; }
 
 .movieCard:not(:hover) .movieCard__overlay {
     transition-delay: 0.3s;
@@ -62,8 +57,8 @@
 .movieCard__title {
     font-size: 1rem;
     font-weight: 300;
-    margin-top: .5rem;
     overflow: hidden;
+    margin-top: .5rem;
     white-space: nowrap;
     text-overflow: ellipsis;
     font-family: var(--font-standard);
@@ -85,9 +80,7 @@
     transition: 0.3s ease;
 }
 
-.movieCard__actions button:hover {
-    transform: scale(1.2);
-}
+.movieCard__actions button:hover { transform: scale(1.2); }
 
 .watchlist-btn {
     width: 1.5rem;

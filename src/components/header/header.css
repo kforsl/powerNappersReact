@@ -27,8 +27,8 @@
 .search-container {
     width: 350px;
     display: flex;
-    border-radius: 15px;
     position: relative;
+    border-radius: 15px;
 }
 
 .search-dropdown {
@@ -42,10 +42,9 @@
 }
 
 .search-dropdown__item {
-    margin-top: .5rem;
-    margin-left: .5rem;
-    margin-right: .5rem;
     padding-bottom: .5rem;
+    margin: 0 .5rem 0 .5rem;
+    font-family: var(--font-standard);
     border-bottom: 1px solid rgba(0, 0, 0, 0.225);
 }
 
@@ -67,7 +66,6 @@
     margin-top: .8rem;
 }
 
-
 .header__input {
     width: 100%;
     border: none;
@@ -76,9 +74,7 @@
     border-radius: 10px 0 0 10px;
 }
 
-.header__input:not(:focus)+.search-dropdown {
-    display: none;
-}
+.header__input:not(:focus) + .search-dropdown:not(:hover) { display: none; }
 
 .header__linktag {
     text-decoration: none;

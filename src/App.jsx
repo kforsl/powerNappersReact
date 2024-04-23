@@ -4,7 +4,6 @@ import Footer from "./components/footer/Footer"
 import { Route, Routes } from "react-router-dom"
 import HomePage from "./pages/homePage/HomePage.jsx"
 import SearchPage from "./pages/searchPage/SearchPage.jsx"
-import handleSearchInput from './components/header/Header.jsx'
 import FavoritesPage from './pages/favoritesPage/FavoritesPage';
 import WatchListPage from './pages/watchListPage/WatchListPage';
 import SingleMoviePage from './pages/singleMoviePage/SingleMoviePage';
@@ -78,7 +77,7 @@ function App() {
 
     return (
         <div className="app">
-            <Header handleSearchInput={handleSearchInput} />
+            <Header />
             <Routes>
                 <Route path="/" element={
                     <HomePage
