@@ -36,13 +36,10 @@ const moveRight = (trailers, trailerArray, setTrailerArray) => {
         )
     })
 
-
     newTrailerArray.map((item, index) => {
         item.classList.add(`trailer-carousel__item-${index + 1}`)
     })
 
-
-    console.log(...newTrailerArray);
     setTrailerArray(newTrailerArray)
 }
 
