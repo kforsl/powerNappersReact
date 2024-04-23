@@ -15,17 +15,21 @@ const getTopMovies = (setTopMovies) => {
         .catch(error => console.log(error))
 }
 
-const getfeaturedMovies = (setFeaturedTrailers, topMovies) => {
-    const movies = [...topMovies]
-    const newFeaturedTrailers = []
+const getfeaturedMovies = (setFeaturedTrailers, topMovies, featuredTrailers) => {
+    if (topMovies.length !== 0) {
+        if (featuredTrailers.length !== 5) {
+            const movies = [...topMovies]
+            const newFeaturedTrailers = []
 
-    while (newFeaturedTrailers.length < 5) {
-        const index = Math.floor(Math.random() * movies.length)
-        const randomMovie = movies.splice(index, 1)
-        newFeaturedTrailers.push(randomMovie[0])
+
+            while (newFeaturedTrailers.length < 5) {
+                const index = Math.floor(Math.random() * movies.length)
+                const randomMovie = movies.splice(index, 1)
+                newFeaturedTrailers.push(randomMovie[0])
+            }
+            setFeaturedTrailers(newFeaturedTrailers);
+        }
     }
-
-    setFeaturedTrailers(newFeaturedTrailers);
 }
 
 function Homepage({ favoriteMovies, watchlist, handleFavorites, handleWatchlist }) {
@@ -40,7 +44,7 @@ function Homepage({ favoriteMovies, watchlist, handleFavorites, handleWatchlist 
     }, [])
 
     useEffect(() => {
-        getfeaturedMovies(setFeaturedTrailers, topMovies)
+        getfeaturedMovies(setFeaturedTrailers, topMovies, featuredTrailers)
     }, [topMovies])
 
     return (
@@ -52,9 +56,10 @@ function Homepage({ favoriteMovies, watchlist, handleFavorites, handleWatchlist 
                     <h2 className='home-page__title'>
                         Featured today
                     </h2>
-                    <TrailerCarousel
-                        movies={featuredTrailers}
-                    />
+                    {featuredTrailers.length === 5 &&
+                        < TrailerCarousel
+                            movies={featuredTrailers}
+                        />}
 
                 </article>
 
