@@ -33,7 +33,7 @@ function MovieCard({ movie, favoriteMovies, watchlist, handleFavorites, handleWa
 
   return (
     <article className='movieCard'>
-      <Link className='moviCard-Link' to={`/singlemovie/${movie.imdbid ? movie.imdbid : movie.imdbID}`}>
+      <Link className='movieCard-Link' to={`/singlemovie/${movie.imdbid ? movie.imdbid : movie.imdbID}`}>
         <img className='movieCard__poster' src={movie.poster ? movie.poster : movie.Poster} alt={movie.title ? movie.title : movie.Title} />
         <section className='movieCard__overlay'>
           <h2 className='movieCard__title'>{movie.title ? movie.title : movie.Title} </h2>

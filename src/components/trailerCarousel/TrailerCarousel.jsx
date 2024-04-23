@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import './trailerCarousel.css'
+import arrowLeft from '../../assets/chevronLeft.svg'
+import arrowRight from '../../assets/chevronRight.svg'
 
 const moveLeft = (movieOrder, setMovieOrder) => {
     const order = [...movieOrder]
@@ -33,22 +35,26 @@ function TrailerCarousel({ movies }) {
                 <button
                     className='trailer-carousel__navigation-btn'
                     onClick={() => moveLeft(movieOrder, setMovieOrder)}>
-                    <img src="../src/assets/chevronLeft.svg" alt="trailer carousel navigate arrow left " />
+                    <img src={arrowLeft} alt="trailer carousel navigate arrow left" />
                 </button>
             </div>
             {
                 movieOrder.map((movie, index) => {
                     if (movie) {
-                        return <iframe src={movie.trailer_link} title={`trailer for ${movie.title}`} key={movie.title} className={`trailer-carousel__item-${index + 1}`}></iframe>
+                        return <iframe
+                            src={movie.trailer_link}
+                            title={`trailer for ${movie.title}`}
+                            key={movie.title}
+                            className={`trailer-carousel__item-${index + 1}`}>
+                        </iframe>
                     }
-
                 })
             }
             <div className='trailer-carousel__fade-right'>
                 <button
                     className='trailer-carousel__navigation-btn'
                     onClick={() => moveRight(movieOrder, setMovieOrder)}>
-                    <img src="../src/assets/chevronRight.svg" alt="trailer carousel navigate arrow right" />
+                    <img src={arrowRight} alt="trailer carousel navigate arrow right" />
                 </button>
             </div>
         </section>
