@@ -5,9 +5,7 @@ import { Link } from 'react-router-dom';
 import searchIcon from '../../assets/searchIcon.svg'
 import apiKey from '../../../apiKey.js'
 
-
 function Header() {
-
     const [searchResult, setSearchResult] = useState([])
     const [searchValue, setSearchValue] = useState('')
 
