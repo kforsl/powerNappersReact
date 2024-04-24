@@ -1,0 +1,19 @@
+
+
+.header__nav-list {
+    display: flex;
+}
+
+.header__linktag { text-decoration: none; }
+
+.header__list-item {
+    padding: 1rem;
+    font-weight: bold;
+    list-style-type: none;
+    color: var(--accent-color);
+    font-family: var(--font-standard);
+}
+
+.header__list-item:hover { color: var(--text-color); }
+
+.active { color: var(--text-color); }

@@ -1,0 +1,16 @@
+.movieListGrid {
+    margin: 0 auto;
+    font-family: var(--font-standard);
+    background-color: var(--blue-color-light);
+    color: var(--text-color);
+    max-width: 1100px;
+    padding: 2rem 0;
+    gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+}
+
+.movieListGrid movieCard {
+    max-width: 100%;
+}
