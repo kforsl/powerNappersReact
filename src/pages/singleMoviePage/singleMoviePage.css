@@ -69,6 +69,7 @@
 .singleMovie__details-item {
     font-size: .8rem;
     color: var(--text-color);
+    font-family: var(--font-standard);
 }
 
 .singleMovie__plot-container {
@@ -125,6 +126,7 @@
 
 .singleMovie__staff-item {
     color: var(--text-color);
+    font-family: var(--font-standard);
 }
 
 

@@ -6,6 +6,7 @@
     position: relative;
     display: flex;
     justify-content: center;
+    margin-bottom: 1.5rem;
 }
 
 .slider {
@@ -35,14 +36,19 @@
 }
 
 .container:hover .card-slider__navigation-btn,
-.container:focus .card-slider__navigation-btn { background-color: rgba(0, 0, 0, .2); }
+.container:focus .card-slider__navigation-btn {
+    background-color: rgba(0, 0, 0, .2);
+}
 
-.container .card-slider__navigation-btn img { opacity: 0; }
 
 .container:hover .card-slider__navigation-btn img,
-.container .card-slider__navigation-btn:focus img { opacity: 1; }
+.container .card-slider__navigation-btn:focus img {
+    opacity: 1;
+}
 
-.container .card-slider__navigation-btn:hover { background-color: rgba(0, 0, 0, .5); }
+.container .card-slider__navigation-btn:hover {
+    background-color: rgba(0, 0, 0, .5);
+}
 
 .progress-bar {
     position: absolute;
