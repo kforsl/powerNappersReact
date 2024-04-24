@@ -8,6 +8,7 @@ function MovieCard({ movie, favoriteMovies, watchlist, handleFavorites, handleWa
     const [isInFavorites, setIsInFavorites] = useState(false);
 
     useEffect(() => {
+        // Kollar om medskickad film är med stora || små bokstäver i key, eftersom APIerna gör olika.
         if (movie.imdbID) {
             setIsInWatchlist(watchlist.some(item => item.imdbID === movie.imdbID || item.imdbid === movie.imdbID))
             setIsInFavorites(favoriteMovies.some(item => item.imdbID === movie.imdbID || item.imdbid === movie.imdbID))
@@ -17,7 +18,7 @@ function MovieCard({ movie, favoriteMovies, watchlist, handleFavorites, handleWa
         }
     }, [watchlist, favoriteMovies, movie]);
 
-
+    // Sätter en bild på de objekt som saknar länk till poster
     if (movie.Poster === "N/A") {
         movie.Poster = `${missingPoster}`
     } else {
