@@ -28,26 +28,33 @@ function Header() {
         input.value = ``
     }
 
-    const handleEscPress = event => {
-        if (event.key === 'Escape') {
-            document.getElementById('inputField').blur();
-            const overlay=document.createElement('div');
-            overlay.className='overlay';
-            document.body.appendChild(overlay);
+    const [isInputEmpty, setInputEmpty] = useState(true);
 
-            overlay.addEventListener('mousemove',()=>{
-                overlay.remove();
-            }, {once:true});
-        }
-    }
+    const checkInput = () => {        
+        const inputField = document.querySelector('#inputField').value;
+        setInputEmpty(inputField === '');
+    };
 
     useEffect(() => {
-        window.addEventListener('keydown', handleEscPress);
-
-        return () => {
-            window.removeEventListener('keydown', handleEscPress);
+        const eventHandler = (event) => {
+            if (event.key === 'Escape' && !isInputEmpty) {
+                document.querySelector('#inputField').blur();
+                const overlay = document.createElement('div');
+                overlay.className = 'overlay';
+                document.body.appendChild(overlay);
+    
+                overlay.addEventListener('mousemove', () => {
+                    overlay.remove();
+                }, { once: true });
+            }
         };
-    }, []);
+    
+        window.addEventListener('keyup', eventHandler);
+    
+        return () => {
+            window.removeEventListener('keyup', eventHandler);
+        };
+    }, [isInputEmpty]);
 
     const activeBtn = (e) => {
         document.querySelectorAll(`.header__list-item`)
@@ -72,7 +79,10 @@ function Header() {
                 <div className='search-container'>
                     <input
                         id='inputField'
-                        onChange={handleSearchInput}
+                        onChange={(event) => {
+                            handleSearchInput(event);
+                            checkInput();
+                        }}
                         className='header__input'
                         type="text"
                         placeholder='Search...'
@@ -82,7 +92,10 @@ function Header() {
                         searchResult.map((result) => {
                             return (
                                 <Link
-                                    onClick={handleClose}
+                                    onClick={() => {
+                                        handleClose();
+                                        checkInput()
+                                    }}
                                     className='search-dropdown__link'
                                     key={result.imdbID}
                                     to={`/singlemovie/${result.imdbID}`}>
@@ -96,7 +109,10 @@ function Header() {
                         })}
                     </section>
                     <Link
-                        onClick={handleClose}
+                        onClick={() => {
+                            handleClose();
+                            checkInput()
+                        }}
                         to={`/search/${searchValue}`}
                         className='header__linktag header__btn'
                     >
