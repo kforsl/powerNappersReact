@@ -19,11 +19,11 @@ function SingleMoviePage(
     }
 ) {
 
-    const { id } = useParams();
+    const { id } = useParams(); // Hämtar id från url
 
-    const [clickedMovie, setClickedMovie] = useState({});
-    const [isInFavorites, setIsInFavorites] = useState(false);
-    const [isInWatchlist, setIsInWatchlist] = useState(false);
+    const [clickedMovie, setClickedMovie] = useState({}); // Klickad film sparas ifrån api anrop
+    const [isInFavorites, setIsInFavorites] = useState(false); // Håller koll på om filmen är med i favoriter eller inte
+    const [isInWatchlist, setIsInWatchlist] = useState(false); // Håller koll på om filmen är med i watchlist eller inte
 
     const getApi = () => {
         axios.get(`http://www.omdbapi.com/?apikey=${apiKey}&plot=full&i=${id}`)
@@ -35,7 +35,6 @@ function SingleMoviePage(
 
     useEffect(() => {
         getApi();
-
     }, [id])
 
     useEffect(() => {
@@ -57,24 +56,6 @@ function SingleMoviePage(
         clickedMovie.src = clickedMovie.Poster;
     }
 
-    const handleFavoriteIcon = () => {
-        if (isInFavorites) {
-            handleFavorites(clickedMovie, 'remove')
-        } else {
-            handleFavorites(clickedMovie, 'add')
-        }
-        setIsInFavorites(!isInFavorites)
-    }
-
-    const handleWatchListIcon = () => {
-        if (isInWatchlist) {
-            handleWatchlist(clickedMovie, 'remove')
-        } else {
-            handleWatchlist(clickedMovie, 'add')
-        }
-        setIsInWatchlist(!isInWatchlist)
-    }
-
 
     return (
         <main className='singleMovie__main'>
@@ -86,13 +67,13 @@ function SingleMoviePage(
                             <h2 className='singleMovie__heading'>{clickedMovie.Title}</h2>
                             <figure>
                                 <img
-                                    onClick={handleWatchListIcon}
+                                    onClick={() => handleWatchlist(clickedMovie)}
                                     className='singleMovie__plus-icon'
                                     src={isInWatchlist ? checkedIcon : plus}
                                     alt="Plus icon"
                                 />
                                 <img
-                                    onClick={handleFavoriteIcon}
+                                    onClick={() => handleFavorites(clickedMovie)}
                                     className='singleMovie__star-icon'
                                     src={isInFavorites ? filledStar : star}
                                     alt="Star icon"

@@ -17,21 +17,6 @@ function MovieCard({ movie, favoriteMovies, watchlist, handleFavorites, handleWa
         }
     }, [watchlist, favoriteMovies, movie]);
 
-    const toggleWatchlist = () => {
-        if (isInWatchlist) {
-            handleWatchlist(movie);
-        } else {
-            handleWatchlist(movie);
-        }
-    };
-
-    const toggleFavorites = () => {
-        if (isInFavorites) {
-            handleFavorites(movie);
-        } else {
-            handleFavorites(movie);
-        }
-    };
 
     if (movie.Poster === "N/A") {
         movie.Poster = `${missingPoster}`
@@ -46,10 +31,10 @@ function MovieCard({ movie, favoriteMovies, watchlist, handleFavorites, handleWa
                 <section className='movieCard__overlay'>
                     <h2 className='movieCard__title'>{movie.title ? movie.title : movie.Title} </h2>
                     <div className="movieCard__actions">
-                        <button className='watchlist-btn' onClick={(e) => { e.preventDefault(); toggleWatchlist() }}>
+                        <button className='watchlist-btn' onClick={(e) => { e.preventDefault(); handleWatchlist(movie) }}>
                             <img src={isInWatchlist ? '../src/assets/checked.svg' : '../src/assets/plus.svg'} alt="Watchlist" />
                         </button>
-                        <button className='favlist-btn' onClick={(e) => { e.preventDefault(); toggleFavorites() }}>
+                        <button className='favlist-btn' onClick={(e) => { e.preventDefault(); handleFavorites(movie) }}>
                             <img src={isInFavorites ? '../src/assets/starFilled.svg' : '../src/assets/StarEmpty.svg'} alt="Favorites" />
                         </button>
                     </div>
