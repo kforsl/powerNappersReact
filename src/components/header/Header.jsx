@@ -1,6 +1,6 @@
 import './header.css'
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import searchIcon from '../../assets/searchIcon.svg'
 import apiKey from '../../../apiKey.js'
@@ -28,6 +28,34 @@ function Header() {
         input.value = ``
     }
 
+    const [isInputEmpty, setInputEmpty] = useState(true);
+
+    const checkInput = () => {        
+        const inputField = document.querySelector('#inputField').value;
+        setInputEmpty(inputField === '');
+    };
+
+    useEffect(() => {
+        const eventHandler = (event) => {
+            if (event.key === 'Escape' && !isInputEmpty) {
+                document.querySelector('#inputField').blur();
+                const overlay = document.createElement('div');
+                overlay.className = 'overlay';
+                document.body.appendChild(overlay);
+    
+                overlay.addEventListener('mousemove', () => {
+                    overlay.remove();
+                }, { once: true });
+            }
+        };
+    
+        window.addEventListener('keyup', eventHandler);
+    
+        return () => {
+            window.removeEventListener('keyup', eventHandler);
+        };
+    }, [isInputEmpty]);
+
     const activeBtn = (e) => {
         document.querySelectorAll(`.header__list-item`)
             .forEach(item => {
@@ -51,7 +79,10 @@ function Header() {
                 <div className='search-container'>
                     <input
                         id='inputField'
-                        onChange={handleSearchInput}
+                        onChange={(event) => {
+                            handleSearchInput(event);
+                            checkInput();
+                        }}
                         className='header__input'
                         type="text"
                         placeholder='Search...'
@@ -61,7 +92,10 @@ function Header() {
                         searchResult.map((result) => {
                             return (
                                 <Link
-                                    onClick={handleClose}
+                                    onClick={() => {
+                                        handleClose();
+                                        checkInput()
+                                    }}
                                     className='search-dropdown__link'
                                     key={result.imdbID}
                                     to={`/singlemovie/${result.imdbID}`}>
@@ -75,7 +109,10 @@ function Header() {
                         })}
                     </section>
                     <Link
-                        onClick={handleClose}
+                        onClick={() => {
+                            handleClose();
+                            checkInput()
+                        }}
                         to={`/search/${searchValue}`}
                         className='header__linktag header__btn'
                     >
