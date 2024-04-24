@@ -8,6 +8,7 @@ function MovieCard({ movie, favoriteMovies, watchlist, handleFavorites, handleWa
     const [isInFavorites, setIsInFavorites] = useState(false);
 
     useEffect(() => {
+        // Kollar om medskickad film är med stora || små bokstäver i key, eftersom APIerna gör olika.
         if (movie.imdbID) {
             setIsInWatchlist(watchlist.some(item => item.imdbID === movie.imdbID || item.imdbid === movie.imdbID))
             setIsInFavorites(favoriteMovies.some(item => item.imdbID === movie.imdbID || item.imdbid === movie.imdbID))
@@ -17,22 +18,7 @@ function MovieCard({ movie, favoriteMovies, watchlist, handleFavorites, handleWa
         }
     }, [watchlist, favoriteMovies, movie]);
 
-    const toggleWatchlist = () => {
-        if (isInWatchlist) {
-            handleWatchlist(movie);
-        } else {
-            handleWatchlist(movie);
-        }
-    };
-
-    const toggleFavorites = () => {
-        if (isInFavorites) {
-            handleFavorites(movie);
-        } else {
-            handleFavorites(movie);
-        }
-    };
-
+    // Sätter en bild på de objekt som saknar länk till poster
     if (movie.Poster === "N/A") {
         movie.Poster = `${missingPoster}`
     } else {
@@ -46,10 +32,10 @@ function MovieCard({ movie, favoriteMovies, watchlist, handleFavorites, handleWa
                 <section className='movieCard__overlay'>
                     <h2 className='movieCard__title'>{movie.title ? movie.title : movie.Title} </h2>
                     <div className="movieCard__actions">
-                        <button className='watchlist-btn' onClick={(e) => { e.preventDefault(); toggleWatchlist() }}>
+                        <button className='watchlist-btn' onClick={(e) => { e.preventDefault(); handleWatchlist(movie) }}>
                             <img src={isInWatchlist ? '../src/assets/checked.svg' : '../src/assets/plus.svg'} alt="Watchlist" />
                         </button>
-                        <button className='favlist-btn' onClick={(e) => { e.preventDefault(); toggleFavorites() }}>
+                        <button className='favlist-btn' onClick={(e) => { e.preventDefault(); handleFavorites(movie) }}>
                             <img src={isInFavorites ? '../src/assets/starFilled.svg' : '../src/assets/StarEmpty.svg'} alt="Favorites" />
                         </button>
                     </div>

@@ -6,9 +6,10 @@ import './searchPage.css'
 import apiKey from '../../../apiKey.js';
 
 function SearchPage({ favoriteMovies, watchlist, handleFavorites, handleWatchlist }) {
-    const { searchTerm } = useParams();
-    const [searchResults, setSearchResults] = useState([]);
+    const { searchTerm } = useParams(); // Hämtar värdet av den sökta filmen från url:en
+    const [searchResults, setSearchResults] = useState([]); // Här sparas filmer som renderas ut
 
+    // useEffect körs när searchTerm uppdateras
     useEffect(() => {
         const fetchData = async () => {
             try {

@@ -1,0 +1,148 @@
+
+.singleMovie__section {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 1rem;
+}
+
+.singleMovie__img {
+    width: 100%;
+    height: 100%;
+}
+
+.singleMovie__info-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.singleMovie__wrapper-upper {
+    display: flex;
+    flex-direction: column;
+}
+
+.singleMovie__heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--text-color);
+}
+
+.singleMovie__heading {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--text-color);
+    font-family: var(--font-standard);
+}
+
+.singleMovie__plus-icon {
+    margin-right: 1rem;
+}
+
+.singleMovie__plus-icon:hover {
+    transform: scale(1.10);
+}
+
+.singleMovie__star-icon:hover {
+    transform: scale(1.10);
+}
+
+.singleMovie__details {
+    gap: 1rem;
+    display: flex;
+    padding: 1rem .5rem;
+    justify-content: space-between;
+    font-family: var(--font-standard);
+}
+
+.singleMovie__details-item::first-letter {
+    text-transform: uppercase;
+}
+
+.singleMovie__details-item {
+    font-size: .8rem;
+    color: var(--text-color);
+    font-family: var(--font-standard);
+}
+
+.singleMovie__plot-container {
+    padding: .5rem;
+}
+
+.singleMovie__plot-heading {
+    font-weight: 500;
+    font-size: 1.30rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-family: var(--font-standard);
+}
+
+.singleMovie__plot {
+    font-size: 1rem;
+    min-height: 10vh;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-family: var(--font-standard);
+
+    /* Scroll bar */
+    height: 240px;
+    padding: .25rem 0;
+    overflow-y: overlay;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px var(--blue-color-light);
+    background-color: var(--blue-color-dark);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 10px;
+}
+
+.singleMovie__staff {
+    display: flex;
+    font-size: .8rem;
+    padding-top: 1rem;
+    justify-content: space-between;
+    font-family: var(--font-standard);
+    border-top: 1px solid var(--text-color);
+}
+
+.singleMovie__staff-item {
+    color: var(--text-color);
+    font-family: var(--font-standard);
+}
+
+
+@media screen and (max-width: 1100px) {
+
+    .singleMovie__details {
+        gap: 1rem;
+        padding: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1rem .5rem;
+    }
+
+    .singleMovie__staff {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .singleMovie__staff {
+        gap: 1rem;
+    }
+}
